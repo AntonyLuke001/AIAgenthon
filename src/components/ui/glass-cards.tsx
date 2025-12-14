@@ -7,6 +7,13 @@ import AuroraBackground from './animated-background';
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface CardData {
+    id: number;
+    title: string;
+    description: string;
+    color: string;
+}
+
 interface CardProps {
     id: number;
     title: string;
@@ -185,7 +192,17 @@ const Card: React.FC<CardProps> = ({ title, description, index, totalCards, colo
     );
 };
 
-export const StackedCards: React.FC = () => {
+interface StackedCardsProps {
+    title?: string;
+    subtitle?: string;
+    cards?: CardData[];
+}
+
+export const StackedCards: React.FC<StackedCardsProps> = ({ 
+    title = "Problem Statements",
+    subtitle = "Scroll to Explore 👇",
+    cards = cardData
+}) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -232,7 +249,7 @@ export const StackedCards: React.FC = () => {
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text'
                 }}>
-                    Problem Statements <br /> Scroll to Explore 👇
+                    {title} <br /> {subtitle}
                 </h1>
             </section>
 
@@ -243,14 +260,14 @@ export const StackedCards: React.FC = () => {
                 position: 'relative',
                 zIndex: 1
             }}>
-                {cardData.map((card, index) => (
+                {cards.map((card, index) => (
                     <Card
                         key={card.id}
                         id={card.id}
                         title={card.title}
                         description={card.description}
                         index={index}
-                        totalCards={cardData.length}
+                        totalCards={cards.length}
                         color={card.color}
                     />
                 ))}

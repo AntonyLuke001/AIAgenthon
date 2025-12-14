@@ -7,6 +7,7 @@ import { MouseSpotlight } from "@/components/ui/mouse-spotlight"
 import  Navbar  from "@/components/Navbar";
 import BlurText from "@/components/ui/blurtext";
 import  Countdown  from "@/components/Countdown";
+import { DownloadButton } from "@/components/ui/download-animation";
 
 
 const handleAnimationComplete = () => {
@@ -34,9 +35,21 @@ export function SplineSceneBasic() {
             onAnimationComplete={handleAnimationComplete}
             className="text-6xl font-bold font-lexendTera"
           />
-            <p className="mt-4 text-neutral-300 max-w-lg tracking-tighter">
+
+          <p className="mt-4 text-neutral-300 max-w-lg tracking-tighter">
             Team up, experiment with cutting‑edge AI tools,<br/> and turn your ideas into production‑ready agents.
           </p>
+
+          {/* Download button */}
+          <div className="mt-6">
+            <DownloadButton 
+              pdfUrl="/b1.pdf"
+              fileName="AI-Agentathon-Brochure.pdf"
+              onDownload={() => {
+                console.log('Download initiated');
+              }}
+            />
+          </div>
           <div>
             <Countdown />
           </div>

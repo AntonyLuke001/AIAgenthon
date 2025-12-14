@@ -10,7 +10,7 @@ export type ElectricCardProps = {
   /** Accent / border color (any valid CSS color). */
   color?: string;
   /** Badge text in the top pill. */
-  badge?: string;
+  badge?: string | React.ReactNode;
   /** Title text. */
   title?: string;
   /** Description text. */
@@ -23,6 +23,9 @@ export type ElectricCardProps = {
 
   /** Extra class names for the outer wrapper (optional). */
   className?: string;
+  
+  /** Click handler for the card */
+  onClick?: () => void;
 };
 
 /**
@@ -40,6 +43,7 @@ const ElectricCard = ({
   width = "22rem",
   aspectRatio = "7 / 10",
   className = "",
+  onClick,
 }: ElectricCardProps) => {
   // Make unique IDs so multiple components don't clash
   const ids = useMemo(() => {
@@ -54,7 +58,7 @@ const ElectricCard = ({
   const filterURL = variant === "hue" ? `url(#${ids.hue})` : `url(#${ids.swirl})`;
 
   return (
-    <div className={`ec-wrap ${className} `}>
+    <div className={`ec-wrap ${className} `} onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
       {/* Inline SVG defs with animated filters (unique IDs per instance) */}
       <svg className="svg-container" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
@@ -144,7 +148,7 @@ const ElectricCard = ({
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         :root {
           --color-neutral-900: oklch(0.185 0 0);
         }
