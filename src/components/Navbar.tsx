@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
-import Eshwar from "@/assets/Eshwar logo.png"
+import Eshwar from "@/assets/SriEshwar.png"
 import Thiran from "@/assets/ThiranLogo.png"
 
 const Navbar = () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
         scrolled 
           ? 'bg-black/90 backdrop-blur-3xl border-b border-cyan-500/30 shadow-[0_8px_32px_rgba(6,182,212,0.15)]' 
           : 'bg-transparent border-b border-transparent'
@@ -40,7 +40,7 @@ const Navbar = () => {
       {/* Top glow effect */}
       <div className={`absolute w-full -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
       
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="w-full px-4 md:px-8 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo with glow effect */}
         <motion.div 
           className="relative"

@@ -6,6 +6,8 @@ import { CursorGlow } from "@/components/ui/cursor-glow";
 import { VantaBackground } from "@/components/ui/vanta-background";
 import Theme from "@/components/Theme";
 import PS from "@/components/PS";
+import Timeline from "@/components/Timeline";
+import Guidlines from "@/components/Guidlines";
 
 const Index = () => {
   return (
@@ -30,6 +32,12 @@ const Index = () => {
       </div>
       <div className="relative z-10">
         <PS/>
+      </div>
+      <div>
+        <Timeline/>
+      </div>
+      <div>
+        <Guidlines/>
       </div>
     </div>
     
