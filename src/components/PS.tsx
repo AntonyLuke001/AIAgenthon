@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 import { ElectricCard } from "@/components/ui/electric-card";
+import { BadgeIndianRupee, GraduationCap, Sprout, TriangleAlert } from "lucide-react";
 
 const PS = () => {
   return (
@@ -51,8 +52,8 @@ const PS = () => {
       <ElectricCard
         variant="hue"
         color="#06b6d4"
-        badge="AI & ML"
-        title="Artificial Intelligence"
+        badge={<BadgeIndianRupee className="w-6 h-6" />}
+        title="FinTech"
         description="Build intelligent systems that learn and adapt to solve complex problems."
         width="100%"
         aspectRatio="4 / 5"
@@ -60,8 +61,8 @@ const PS = () => {
       <ElectricCard
         variant="swirl"
         color="#a855f7"
-        badge="Web3"
-        title="Blockchain"
+        badge={<GraduationCap className="w-6 h-6" />}
+        title="EduTech"
         description="Create decentralized solutions for the future of digital trust."
         width="100%"
         aspectRatio="4 / 5"
@@ -69,8 +70,8 @@ const PS = () => {
       <ElectricCard
         variant="hue"
         color="#3b82f6"
-        badge="IoT"
-        title="Smart Systems"
+        badge={<Sprout className="w-6 h-6" />}
+        title="AgriTech"
         description="Connect devices and data to build intelligent infrastructure."
         width="100%"
         aspectRatio="4 / 5"
@@ -78,8 +79,8 @@ const PS = () => {
       <ElectricCard
         variant="swirl"
         color="#ec4899"
-        badge="Data Science"
-        title="Analytics"
+        badge={<TriangleAlert className="w-6 h-6" />}
+        title="DisasterTech"
         description="Transform raw data into actionable insights that drive innovation."
         width="100%"
         aspectRatio="4 / 5"

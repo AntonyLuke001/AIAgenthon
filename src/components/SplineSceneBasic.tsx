@@ -6,6 +6,7 @@ import { Spotlight } from "@/components/ui/spotlight"
 import { MouseSpotlight } from "@/components/ui/mouse-spotlight"
 import  Navbar  from "@/components/Navbar";
 import BlurText from "@/components/ui/blurtext";
+import  Countdown  from "@/components/Countdown";
 
 
 const handleAnimationComplete = () => {
@@ -36,6 +37,9 @@ export function SplineSceneBasic() {
             <p className="mt-4 text-neutral-300 max-w-lg tracking-tighter">
             Team up, experiment with cutting‑edge AI tools,<br/> and turn your ideas into production‑ready agents.
           </p>
+          <div>
+            <Countdown />
+          </div>
           <button className="
             donate-btn
             relative

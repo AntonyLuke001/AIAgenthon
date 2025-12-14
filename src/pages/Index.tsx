@@ -15,12 +15,11 @@ const Index = () => {
       {/* Vanta.js animated network background */}
       {/* <VantaBackground /> */}
       
+      {/* Fixed Navbar */}
+      <Navbar />
+      
       {/* Cursor animation */}
       <CursorGlow />
-    
-       <div className="w-full h-[20%] relative z-10" >
-        {/* <Navbar /> */}
-       </div>
       <div className="w-full h-[80%] relative z-10">
         <SplineSceneBasic />
       </div>
