@@ -8,6 +8,9 @@ import Theme from "@/components/Theme";
 import PS from "@/components/PS";
 import Timeline from "@/components/Timeline";
 import Guidlines from "@/components/Guidlines";
+import Prize from "@/components/Prize";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -37,6 +40,15 @@ const Index = () => {
       </div>
       <div>
         <Guidlines/>
+      </div>
+      <div>
+        <Prize/>
+      </div>
+      <div>
+        <FAQ/>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
     

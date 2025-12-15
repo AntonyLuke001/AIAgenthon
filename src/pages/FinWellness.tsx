@@ -1,32 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StackedCards } from '@/components/ui/glass-cards'
 
 const finTechCards = [
   {
     id: 1,
-    title: "Personal Finance Management",
-    description: "Build AI-powered tools to help individuals track expenses, create budgets, and achieve financial goals with intelligent insights and recommendations.",
+    title: "AIAG07: Intelligent Loan Structuring for Irregular-Income Workers",
+    context: "Gig workers, freelancers, delivery partners, and informal earners experience volatile monthly income, making it impossible for them to commit to fixed EMI schedules. Traditional lenders either reject them or provide rigid loans that quickly become delinquent, pushing them toward predatory platforms.",
+    challenge: "Build a multi-agent loan-structuring system that predicts real user cashflows, adjusts repayment schedules dynamically, and continuously evaluates risk as income fluctuates.",
+    participants: "Participants can build a financial AI engine where cashflow-forecasting agents analyse historical earning patterns, risk agents evaluate repayment probability, and structuring agents generate adaptive loan contracts with flexible EMIs. The prototype may simulate income volatility and demonstrate how repayment terms evolve in real time to maintain financial stability and reduce defaults.",
     color: "rgba(5, 150, 105, 0.8)" // dark green-600
   },
   {
     id: 2,
-    title: "Digital Payment Solutions",
-    description: "Create secure and seamless payment platforms that enable fast, reliable transactions across multiple channels and currencies.",
+    title: "AIAG08: Real-Time Spending Anomaly Detection & Fraud Prevention Engine",
+    context: "Users in India lose ₹2,000–₹5,000 every year to unrecognized or fraudulent transactions because most bank fraud systems work on static rules and detect anomalies after 24–48 hours. Modern fraud requires sub-second behavioural analysis and pattern recognition.",
+    challenge: "Challenge for card 2",
+    participants: "Users in India lose ₹2,000–₹5,000 every year to unrecognized or fraudulent transactions because most bank fraud systems work on static rules and detect anomalies after 24–48 hours. Modern fraud requires sub-second behavioural analysis and pattern recognition.",
     color: "rgba(37, 99, 235, 0.8)" // dark blue-600
   },
   {
     id: 3,
-    title: "Financial Literacy & Education",
-    description: "Develop interactive platforms that teach financial concepts, investment strategies, and money management skills to empower users.",
+    title: "AIAG09: Agentic Intelligent Investment Recommendation Engine (DRL-Powered)",
+    context: "95% of Indian retail investors rely on gut feeling or social media tips rather than structured financial strategies. Existing robo-advisors provide generic allocations that do not adapt to market shifts, user behaviour, or life events, leading to suboptimal long-term returns.",
+    challenge: "Build a reinforcement-learning-based investment advisor that continuously adapts to user profile, risk appetite, market signals, and financial goals using a coordinated set of AI agents.",
+    participants: "Participants can create an investment simulation platform where market agents track live or synthetic price data, risk agents compute exposure and downside probability, behavioural agents monitor user tendencies, and a DRL policy agent learns optimal portfolio actions. The final prototype may include a performance dashboard comparing static vs. adaptive strategies to highlight return improvements.",
     color: "rgba(124, 58, 237, 0.8)" // dark purple-600
   }
 ];
 
 const FinWellness = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <StackedCards 
       title="FinTech & Wellness"
-      subtitle="Financial Innovation Challenges 💰"
+      subtitle="Financial Innovation Challenges"
       cards={finTechCards}
     />
   )

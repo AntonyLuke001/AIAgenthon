@@ -53,13 +53,13 @@ const PS = () => {
     >
       <ElectricCard
         variant="hue"
-        color="#06b6d4"
-        badge={<BadgeIndianRupee className="w-6 h-6" />}
-        title="FinTech"
-        description="Build intelligent systems that learn and adapt to solve complex problems."
+        color="#3b82f6"
+        badge={<Container className="w-6 h-6" />}
+        title="SupplyChain"
+        description="Connect devices and data to build intelligent infrastructure."
         width="100%"
         aspectRatio="4 / 5"
-        onClick={() => navigate('/ps/finwellness')}
+        onClick={() => navigate('/ps/supplychain')}
       />
       <ElectricCard
         variant="swirl"
@@ -73,13 +73,13 @@ const PS = () => {
       />
       <ElectricCard
         variant="hue"
-        color="#3b82f6"
-        badge={<Container className="w-6 h-6" />}
-        title="SupplyChain"
-        description="Connect devices and data to build intelligent infrastructure."
+        color="#06b6d4"
+        badge={<BadgeIndianRupee className="w-6 h-6" />}
+        title="FinTech"
+        description="Build intelligent systems that learn and adapt to solve complex problems."
         width="100%"
         aspectRatio="4 / 5"
-        onClick={() => navigate('/ps/supplychain')}
+        onClick={() => navigate('/ps/finwellness')}
       />
       <ElectricCard
         variant="swirl"

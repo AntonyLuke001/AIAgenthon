@@ -10,20 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 interface CardData {
     id: number;
     title: string;
-    description: string;
+    context: string;
+    challenge: string;
+    participants: string;
     color: string;
 }
 
 interface CardProps {
     id: number;
     title: string;
-    description: string;
+    context: string;
+    challenge: string;
+    participants: string;
     index: number;
     totalCards: number;
     color: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, index, totalCards, color }) => {
+const Card: React.FC<CardProps> = ({ title, context, challenge, participants, index, totalCards, color }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -175,16 +179,72 @@ const Card: React.FC<CardProps> = ({ title, description, index, totalCards, colo
                         }}>
                             {title}
                         </h2>
-                        <p style={{
-                            fontSize: 'clamp(1.1rem, 1.8vw, 1.4rem)',
-                            color: 'rgba(255, 255, 255, 0.95)',
-                            lineHeight: '1.7',
-                            textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)',
-                            fontWeight: '400',
-                            letterSpacing: '0.01em'
-                        }}>
-                            {description}
-                        </p>
+                        
+                        {/* Context Section */}
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <h3 style={{
+                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontWeight: '600',
+                                color: color.replace('0.8', '1'),
+                                marginBottom: '0.5rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em'
+                            }}>
+                                Context
+                            </h3>
+                            <p style={{
+                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                color: 'rgba(255, 255, 255, 0.85)',
+                                lineHeight: '1.6',
+                                textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+                            }}>
+                                {context}
+                            </p>
+                        </div>
+
+                        {/* Challenge Section */}
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <h3 style={{
+                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontWeight: '600',
+                                color: color.replace('0.8', '1'),
+                                marginBottom: '0.5rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em'
+                            }}>
+                                The Challenge
+                            </h3>
+                            <p style={{
+                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                color: 'rgba(255, 255, 255, 0.85)',
+                                lineHeight: '1.6',
+                                textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+                            }}>
+                                {challenge}
+                            </p>
+                        </div>
+
+                        {/* Participants Section */}
+                        <div>
+                            <h3 style={{
+                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontWeight: '600',
+                                color: color.replace('0.8', '1'),
+                                marginBottom: '0.5rem',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em'
+                            }}>
+                                What Participants Can Do
+                            </h3>
+                            <p style={{
+                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                color: 'rgba(255, 255, 255, 0.85)',
+                                lineHeight: '1.6',
+                                textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+                            }}>
+                                {participants}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,7 +325,9 @@ export const StackedCards: React.FC<StackedCardsProps> = ({
                         key={card.id}
                         id={card.id}
                         title={card.title}
-                        description={card.description}
+                        context={card.context}
+                        challenge={card.challenge}
+                        participants={card.participants}
                         index={index}
                         totalCards={cards.length}
                         color={card.color}
