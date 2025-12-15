@@ -1,73 +1,63 @@
 import React from "react";
 import { Timeline as TimelineUI } from "@/components/ui/timeline";
+import { GradientCard } from "@/components/ui/gradient-card";
+import { Calendar, Rocket, Award, Target } from "lucide-react";
 
 export default function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "Registration Opens",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-300 md:text-sm">
-            Built and launched innovative solutions with cutting-edge technology.
-          </p>
-          <div className="rounded-lg overflow-hidden  shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
-              alt="2024 Milestone"
-              className="w-[500px] h-[300px] object-cover"
-            />
-          </div>
+        <div className="w-full h-full">
+          <GradientCard
+            title="Join the AI Revolution"
+            description="Registration is now open for the AI Agents Hackathon 2025. Assemble your team of up to 4 members and prepare to tackle real-world challenges using multi-agent AI systems. Early bird registrations get exclusive access to pre-hackathon workshops and mentorship sessions."
+            icon={<Rocket className="w-5 h-5" />}
+            linkText="Register Now"
+            linkHref="#register"
+          />
         </div>
       ),
     },
     {
-      title: "2023",
+      title: "Ideation Phase",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-300 md:text-sm">
-            Expanded our platform and integrated advanced AI capabilities to enhance user experience.
-          </p>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
-              alt="2023 Milestone"
-              className="w-[500px] h-[200px] object-cover"
-            />
-          </div>
+        <div className="w-full h-full">
+          <GradientCard
+            title="Problem Statement Selection"
+            description="Choose from four exciting tracks: FinTech & Wellness, CivicTech Solutions, Supply Chain Innovation, or DisasterTech Solutions. Teams will analyze the problem statements, research existing solutions, and design their multi-agent AI architecture. Mentors will be available for guidance throughout this phase."
+            icon={<Target className="w-5 h-5" />}
+            linkText="View Challenges"
+            linkHref="#ps"
+          />
         </div>
       ),
     },
     {
-      title: "2022",
+      title: "Development Sprint",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-300 md:text-sm">
-            Established our foundation with blockchain integration and secure infrastructure.
-          </p>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop"
-              alt="2022 Milestone"
-              className="w-[500px] h-[200px] object-cover"
-            />
-          </div>
+        <div className="w-full h-full">
+          <GradientCard
+            title="Build Your AI Agent Solution"
+            description="The main hackathon period where teams develop their AI agent systems. Access free cloud credits, API keys, and technical support. Daily check-ins with mentors ensure you're on track. Focus on innovation, scalability, and real-world impact while building your prototype."
+            icon={<Calendar className="w-5 h-5" />}
+            linkText="Learn More"
+            linkHref="#timeline"
+          />
         </div>
       ),
     },
-     {
-      title: "2024",
+    {
+      title: "Final Presentations",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-300 md:text-sm">
-            Built and launched innovative solutions with cutting-edge technology.
-          </p>
-          <div className="rounded-lg overflow-hidden  shadow-lg">
-            <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop"
-              alt="2024 Milestone"
-              className="w-[500px] h-[300px] object-cover"
-            />
-          </div>
+        <div className="w-full h-full">
+          <GradientCard
+            title="Showcase & Awards Ceremony"
+            description="Present your AI agent solution to industry experts and judges. Demonstrate your innovation, technical implementation, and real-world impact. Winners will be announced across multiple categories including Best Overall, Best Innovation, and domain-specific awards. Total prize pool of ₹5,00,000 awaits!"
+            icon={<Award className="w-5 h-5" />}
+            linkText="View Prizes"
+            linkHref="#prizes"
+          />
         </div>
       ),
     }

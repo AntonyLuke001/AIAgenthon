@@ -5,17 +5,14 @@ import Thiran from "@/assets/ThiranLogo.png"
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Twitter, href: "#", label: "Twitter" }
+    { icon: Instagram, href: "https://www.instagram.com/srieshwar_thiran/?hl=en", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/srieshwarcollegeofengineering/", label: "Facebook" },
+    { icon: Linkedin, href: "https://in.linkedin.com/school/srieshwar/", label: "LinkedIn" },
+    { icon: Youtube, href: "https://www.youtube.com/channel/UC77zVLSva6lRY6eqaDFUkuA", label: "YouTube" },
   ]
 
   const coordinators = [
-    { name: "Kavinesh K", phone: "9489243775" },
-    { name: "Gopinath T", phone: "7708739300" },
-    { name: "Ruban B", phone: "8144596872" }
+    { name: "Mr.Yeshwanth Saran Sundar", phone: "86080 84220" }
   ]
 
   return (
@@ -29,22 +26,15 @@ const Footer = () => {
           {/* Left Section - Logos */}
           <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-6">
             {/* Main College Logo */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img 
-                src={Eshwar} 
-                alt="K.S. Rangasamy College of Technology" 
-                className="relative w-48 h-auto object-contain"
-              />
-            </div>
+            
             
             {/* Hackathon Logo */}
-            <div className="relative group mt-auto">
+            <div className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src={Thiran} 
                 alt="Hackathon Logo" 
-                className="relative h-16 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                className="relative h-16 object-contain hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           </div>
@@ -68,8 +58,8 @@ const Footer = () => {
               {/* Email */}
               <div className="flex items-center space-x-2 text-neutral-300 hover:text-cyan-400 transition-colors duration-300 group pt-2">
                 <Mail className="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform" />
-                <a href="mailto:dakshaa@ksrct.ac.in" className="hover:underline">
-                  dakshaa@ksrct.ac.in
+                <a href="mailto:sece@sece.ac.in" className="hover:underline">
+                  sece@sece.ac.in
                 </a>
               </div>
             </div>
@@ -85,10 +75,10 @@ const Footer = () => {
               <MapPin className="w-5 h-5 text-cyan-500 mt-1 flex-shrink-0" />
               <div className="space-y-1">
                 <p className="leading-relaxed">
-                  K.S.Rangasamy College of Technology,
+                  Sri Eshwar College of Engineering,
                 </p>
                 <p className="leading-relaxed">
-                  KSR Kalvi Nagar, Tiruchengode-637 215,
+                  Kondampatti  Post, Vadasithur via, Kinathukadavu, Coimbatore- 641 202,
                 </p>
                 <p className="leading-relaxed">
                   Tamil Nadu, India.
@@ -100,11 +90,13 @@ const Footer = () => {
           {/* Right Section - Dakshaa Logo & Social Media */}
           <div className="lg:col-span-3 flex flex-col items-center lg:items-end space-y-6">
             {/* Dakshaa T25 Logo */}
-            <div className="text-center lg:text-right">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 tracking-wider">
-                DAKSHAA T25
-              </h2>
-              <p className="text-sm text-neutral-400 mt-1">AI Agents Hackathon</p>
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <img 
+                src={Eshwar} 
+                alt="Sri Eshwar college Of Engineering" 
+                className="relative w-48 h-auto object-contain"
+              />
             </div>
             
             {/* Social Media Icons */}
@@ -132,11 +124,11 @@ const Footer = () => {
           <p className="text-center text-neutral-400 text-sm">
             Design and Developed By{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-semibold">
-              Department of Information Technology
+              Department of Aritificial Intelligence And Data Science
             </span>
           </p>
           <p className="text-center text-neutral-500 text-xs mt-2">
-            © {new Date().getFullYear()} K.S. Rangasamy College of Technology. All rights reserved.
+            © {new Date().getFullYear()} Sri Eshwar College of Engineerng. All rights reserved.
           </p>
         </div>
       </div>

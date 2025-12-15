@@ -17,6 +17,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+    
+    if (targetElement) {
+      const navbarHeight = 80 // Approximate navbar height
+      const targetPosition = targetElement.offsetTop - navbarHeight
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      })
+      
+      // Update URL without causing a page jump
+      window.history.pushState(null, '', href)
+      
+      setIsOpen(false) // Close mobile menu if open
+    } else {
+      // Fallback: if element not found, just update URL and let browser handle it
+      window.location.hash = href
+      setIsOpen(false)
+    }
+  }
+
   const navItems = [
     { name: 'About', href: '#about' },
     { name: 'Theme', href: '#theme' },
@@ -57,6 +82,7 @@ const Navbar = () => {
             <motion.a 
               key={item.name}
               href={item.href}
+              onClick={(e) => handleSmoothScroll(e, item.href)}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -114,11 +140,11 @@ const Navbar = () => {
                 <motion.a 
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="relative text-gray-300 hover:text-white font-medium py-3 px-4 rounded-lg transition-all group overflow-hidden"
-                  onClick={() => setIsOpen(false)}
                   whileHover={{ x: 8 }}
                 >
                   {/* Background gradient */}

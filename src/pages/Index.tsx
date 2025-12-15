@@ -26,25 +26,25 @@ const Index = () => {
       <div className="w-full h-[80%] relative z-10">
         <SplineSceneBasic />
       </div>
-      <div className="relative z-10">
+      <div id="about" className="relative z-10">
         <About />
       </div>
-      <div className="relative z-10">
+      <div id="theme" className="relative z-10">
         <Theme/>
       </div>
-      <div className="relative z-10">
+      <div id="ps" className="relative z-10">
         <PS/>
       </div>
-      <div>
+      <div id="timeline">
         <Timeline/>
       </div>
-      <div>
+      <div id="guidelines">
         <Guidlines/>
       </div>
-      <div>
+      <div id="prizes">
         <Prize/>
       </div>
-      <div>
+      <div id="faqs">
         <FAQ/>
       </div>
       <div>

@@ -23,9 +23,9 @@ export function SplineSceneBasic() {
       />
       <MouseSpotlight size={300} className="blur-xl bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.9)_15%,rgba(255,255,255,0.6)_35%,rgba(255,255,255,0.2)_55%,transparent_75%)]" />
       <Navbar />
-      <div className="flex h-full flex-col md:flex-row">
+      <div className="flex h-full flex-col md:flex-row ">
         {/* Left content */}
-        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center">
+        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-48">
           
           <BlurText
             text="AI Agentathon"
@@ -33,7 +33,7 @@ export function SplineSceneBasic() {
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="text-6xl font-bold font-lexendTera"
+            className="text-8xl font-bold font-audiowide"
           />
 
           <p className="mt-4 text-neutral-300 max-w-lg tracking-tighter">

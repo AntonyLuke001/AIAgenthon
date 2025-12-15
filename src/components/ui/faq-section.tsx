@@ -14,6 +14,13 @@ interface FAQItem {
 }
 
 function FAQSection() {
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
   const faqItems: FAQItem[] = [
 
     {
@@ -59,7 +66,11 @@ function FAQSection() {
                 </p>
               </div>
               <div className="">
-                <Button className="gap-4 bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white border-none" variant="outline">
+                <Button 
+                  onClick={handleScrollToBottom}
+                  className="gap-4 bg-gradient-to-r from-teal-500 to-purple-600 hover:from-teal-600 hover:to-purple-700 text-white border-none" 
+                  variant="outline"
+                >
                   Contact Support <PhoneCall className="w-4 h-4" />
                 </Button>
               </div>

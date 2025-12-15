@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        lexendTera: ['"Lexend Tera"', 'sans-serif'], // ✅ Added
+        audiowide : ['Audiowide','sans-serif']
+
       },
       colors: {
         border: "hsl(var(--border))",

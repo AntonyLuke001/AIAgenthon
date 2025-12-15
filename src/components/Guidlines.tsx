@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { Users, FileText, Trophy, Calendar, Code, Shield } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 
@@ -9,42 +9,90 @@ export default function Guidlines() {
     <div className="w-full bg-[#0a0a0f] px-4 md:px-8 lg:px-12 py-20">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-lg md:text-4xl mb-4 text-white text-center">
-          Our Guidelines
+          Official Guidelines
         </h2>
         <p className="text-neutral-400 text-sm md:text-base text-center mb-12">
-          Principles that guide our work and innovation.
+          Read carefully before participating in the AI Agentathon 2026
         </p>
         
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-4">
           <GridItem
             area=""
-            icon={<Box className="h-4 w-4" />}
-            title="Innovation First"
-            description="Building cutting-edge solutions with modern technology."
+            icon={<Users className="h-4 w-4" />}
+            title="Team Formation"
+            description={
+              <div className="space-y-2">
+                <p>• Teams must have 3-6 members</p>
+                <p>• Cross-college teams allowed</p>
+                <p>• Multidisciplinary teams encouraged</p>
+                <p>• One Team Lead for communication</p>
+              </div>
+            }
           />
           <GridItem
             area=""
-            icon={<Settings className="h-4 w-4" />}
-            title="Quality Engineering"
-            description="Delivering robust, scalable, and maintainable code."
+            icon={<Calendar className="h-4 w-4" />}
+            title="Two Round Structure"
+            description={
+              <div className="space-y-2">
+                <p><strong>Round 1 (Free):</strong> Idea Submission & Prototyping</p>
+                <p>• Kickoff: 02.01.2025</p>
+                <p>• Deadline: 11.01.2025</p>
+                <p><strong>Final Round:</strong> 04.02.2026 at Thiran (Pass Required)</p>
+              </div>
+            }
           />
           <GridItem
             area=""
-            icon={<Lock className="h-4 w-4" />}
-            title="Security & Privacy"
-            description="Protecting user data with industry-leading security practices."
+            icon={<FileText className="h-4 w-4" />}
+            title="Round 1 Submission"
+            description={
+              <div className="space-y-2">
+                <p>• PPT using official template</p>
+                <p>• Working prototype (Vercel/Netlify/Render)</p>
+                <p>• 1-2 min demo video</p>
+                <p>• GitHub repository with documentation</p>
+              </div>
+            }
           />
           <GridItem
             area=""
-            icon={<Sparkles className="h-4 w-4" />}
-            title="User Experience"
-            description="Creating intuitive and delightful user interactions."
+            icon={<Trophy className="h-4 w-4" />}
+            title="Judging Criteria"
+            description={
+              <div className="space-y-2">
+                <p>• Innovation & Creativity</p>
+                <p>• Technical Execution</p>
+                <p>• Impact & Relevance</p>
+                <p>• Presentation & Documentation</p>
+              </div>
+            }
           />
           <GridItem
-            area="md:col-span-2"
-            icon={<Search className="h-4 w-4" />}
-            title="Continuous Learning"
-            description="Staying ahead with the latest technologies and best practices."
+            area=""
+            icon={<Code className="h-4 w-4" />}
+            title="Code of Conduct"
+            description={
+              <div className="space-y-2">
+                <p>• All work must be original</p>
+                <p>• AI tools allowed for assistance, not full replacement</p>
+                <p>• Supportive and inclusive environment</p>
+                <p>• No late submissions accepted</p>
+              </div>
+            }
+          />
+          <GridItem
+            area=""
+            icon={<Shield className="h-4 w-4" />}
+            title="Important Notes"
+            description={
+              <div className="space-y-2">
+                <p>• Winners selected per Problem Statement</p>
+                <p>• Themes are for guidance only</p>
+                <p>• Shortlisted teams notified by 23.01.2025</p>
+                <p>• Event pass required for final round</p>
+              </div>
+            }
           />
         </ul>
       </div>

@@ -95,7 +95,7 @@ const Countdown = () => {
           
           {/* Counter box */}
           <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm border border-sky-400/40 rounded-lg px-4 py-4 shadow-[0_0_20px_rgba(56,189,248,0.4)]">
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <AnimatedDigit digit={digits[0]} prevDigit={prevDigits?.[0]} />
               <AnimatedDigit digit={digits[1]} prevDigit={prevDigits?.[1]} />
             </div>
