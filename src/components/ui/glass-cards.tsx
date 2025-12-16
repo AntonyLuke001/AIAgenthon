@@ -274,9 +274,9 @@ export const StackedCards: React.FC<StackedCardsProps> = ({
             <section 
                 className="px-4 md:px-8 lg:px-12"
                 style={{
-                    height: '70vh',
+                    height: title || subtitle ? '70vh' : '0vh',
                     width: '100%',
-                    display: 'grid',
+                    display: title || subtitle ? 'grid' : 'none',
                     placeContent: 'center',
                     position: 'relative',
                     color: '#ffffff',

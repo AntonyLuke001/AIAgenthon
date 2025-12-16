@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { StackedCards } from '@/components/ui/glass-cards'
+import { AnimatedBackButton } from '@/components/ui/animated-back-button'
+import { AnimatedText } from '@/components/ui/animated-shiny-text'
 
 const supplyChainCards = [
   {
@@ -34,11 +36,21 @@ const SupplyChain = () => {
   }, []);
 
   return (
-    <StackedCards 
-      title="Supply Chain Innovation"
-      subtitle="Optimizing Global Networks"
-      cards={supplyChainCards}
-    />
+    <div className="relative">
+      <AnimatedBackButton />
+      <div className="pt-20">
+        <div className="flex justify-center items-center py-8">
+          <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] font-bold text-white text-center">
+            Supply Chain Innovation
+          </h1>
+        </div>
+        <StackedCards 
+          title=""
+          subtitle=""
+          cards={supplyChainCards}
+        />
+      </div>
+    </div>
   )
 }
 

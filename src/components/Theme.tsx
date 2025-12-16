@@ -23,28 +23,27 @@ const Theme = () => {
 
         {/* Right Column - Text Content */}
         <div className="text-white space-y-6 z-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Interactive 3D Robot
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-audiowide">
+            AI Agentathon 2026
           </h2>
-          <h3 className="text-2xl md:text-3xl font-semibold text-cyan-400">
+          {/* <h3 className="text-2xl md:text-3xl font-semibold text-cyan-400">
             Meet Whobee
-          </h3>
+          </h3> */}
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            Experience the future of interactive design with our 3D robot animation. 
-            Explore cutting-edge technology that brings digital experiences to life.
+            Build autonomous AI agents that sense, reason, and act in the real world. Team up for a 48‑hour on‑campus hackathon to solve high‑impact problems in supply chains, cities, finance, and disaster response.
           </p>
           <div className="space-y-4">
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-cyan-500 rounded-full mt-2"></div>
-              <p className="text-gray-400">Fully interactive 3D environment</p>
+              <p className="text-gray-400">4 themes · 12 real-world problem statements</p>
             </div>
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
-              <p className="text-gray-400">Smooth real-time rendering</p>
+              <p className="text-gray-400">Multi‑agent AI focus – beyond chatbots and simple CRUD apps</p>
             </div>
             <div className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-              <p className="text-gray-400">Optimized for all devices</p>
+              <p className="text-gray-400">Cash prizes, certificates, and mentorship from faculty and industry</p>
             </div>
           </div>
         </div>

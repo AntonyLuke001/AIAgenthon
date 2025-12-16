@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Check } from 'lucide-react';
 
@@ -15,6 +15,33 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 }) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const btnRef = useRef<HTMLButtonElement | null>(null);
+  const spanRef = useRef<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { width } = (e.target as HTMLElement)?.getBoundingClientRect();
+      const offset = e.offsetX;
+      const left = `${(offset / width) * 100}%`;
+
+      spanRef.current!.animate({ left }, { duration: 250, fill: "forwards" });
+    };
+
+    const handleMouseLeave = () => {
+      spanRef.current!.animate(
+        { left: "50%" },
+        { duration: 100, fill: "forwards" }
+      );
+    };
+
+    btnRef?.current?.addEventListener("mousemove", handleMouseMove);
+    btnRef?.current?.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      btnRef?.current?.removeEventListener("mousemove", handleMouseMove);
+      btnRef?.current?.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
 
   const handleDownloadClick = () => {
     if (isDownloading || isComplete) return;
@@ -47,54 +74,28 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
   return (
     <div className="flex justify-start items-center w-full">
       <motion.button
+        ref={btnRef}
         onClick={handleDownloadClick}
         disabled={isDownloading || isComplete}
         className={`
-          relative flex items-center justify-center gap-2 px-6 py-3
-          rounded-full overflow-hidden
-          font-medium text-base whitespace-nowrap
-          transition-all duration-300
-          ${isDownloading || isComplete
-            ? 'cursor-wait' 
-            : 'cursor-pointer hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]'
-          }
+          relative overflow-hidden rounded-full 
+          bg-black px-6 py-3
+          font-medium text-base
+          ${isDownloading || isComplete ? 'cursor-wait' : 'cursor-pointer'}
         `}
-        initial={{ scale: 1 }}
-        whileHover={!isDownloading && !isComplete ? { scale: 1.02 } : {}}
-        whileTap={!isDownloading && !isComplete ? { scale: 0.98 } : {}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 3 }}
+        whileTap={{ scale: 0.95 }}
       >
-        {/* Animated gradient background */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500"
-          animate={!isDownloading && !isComplete ? {
-            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-          } : {}}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-          style={{ backgroundSize: '200% 100%' }}
+        {/* Spotlight effect */}
+        <span
+          ref={spanRef}
+          className="pointer-events-none absolute left-[50%] top-[50%] h-32 w-32 -translate-x-[50%] -translate-y-[50%] rounded-full bg-white"
         />
 
-        {/* Glass overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent" />
-
-        {/* Progress bar */}
-        <AnimatePresence>
-          {isDownloading && (
-            <motion.div
-              className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-300 via-white to-cyan-300"
-              initial={{ width: '0%' }}
-              animate={{ width: '100%' }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 2, ease: 'easeInOut' }}
-            />
-          )}
-        </AnimatePresence>
-
-        {/* Icon and text content */}
-        <div className="relative z-10 flex items-center gap-2">
+        {/* Content */}
+        <span className="pointer-events-none relative z-10 mix-blend-difference flex items-center justify-center gap-2 text-white">
           <AnimatePresence mode="wait">
             {isComplete ? (
               <motion.div
@@ -109,7 +110,6 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
             ) : (
               <motion.div
                 key="download"
-                initial={{ scale: 1, y: 0 }}
                 animate={isDownloading ? {
                   y: [0, -3, 0],
                   transition: {
@@ -118,7 +118,6 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                     ease: 'easeInOut'
                   }
                 } : {}}
-                exit={{ scale: 0, rotate: 180 }}
               >
                 <Download className="w-5 h-5 text-white" />
               </motion.div>
@@ -129,52 +128,35 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
             {isComplete ? (
               <motion.span
                 key="downloaded"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="text-white font-medium"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-white font-medium whitespace-nowrap"
               >
                 Downloaded!
               </motion.span>
             ) : isDownloading ? (
               <motion.span
                 key="downloading"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="text-white font-medium"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-white font-medium whitespace-nowrap"
               >
                 Downloading...
               </motion.span>
             ) : (
               <motion.span
                 key="download"
-                initial={{ opacity: 1 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="text-white font-medium"
+                className="text-white font-medium whitespace-nowrap"
               >
                 Download Brochure
               </motion.span>
             )}
           </AnimatePresence>
-        </div>
-
-        {/* Shimmer effect on hover */}
-        <motion.div
-          className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
-          style={{
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-            backgroundSize: '200% 100%',
-          }}
-          animate={{
-            backgroundPosition: ['200% 0', '-200% 0'],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: 'linear'
-          }}
-        />
+        </span>
       </motion.button>
     </div>
   );

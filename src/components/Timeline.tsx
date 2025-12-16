@@ -1,62 +1,66 @@
 import React from "react";
 import { Timeline as TimelineUI } from "@/components/ui/timeline";
 import { GradientCard } from "@/components/ui/gradient-card";
-import { Calendar, Rocket, Award, Target } from "lucide-react";
+import { Calendar, Rocket, Award, Target, Code } from "lucide-react";
 
 export default function TimelineDemo() {
   const data = [
     {
-      title: "Registration Opens",
+      title: "Dec 20 - Jan 10",
       content: (
         <div className="w-full h-full">
           <GradientCard
-            title="Join the AI Revolution"
-            description="Registration is now open for the AI Agents Hackathon 2025. Assemble your team of up to 4 members and prepare to tackle real-world challenges using multi-agent AI systems. Early bird registrations get exclusive access to pre-hackathon workshops and mentorship sessions."
+            title="Registration Opens"
+            description="Team registration begins! Form teams of 3-6 members from your college or across institutions. Multidisciplinary teams are highly encouraged. Register for FREE to participate in Round 1. Choose your problem statement from FinTech & Wellness, CivicTech Solutions, Supply Chain Innovation, or DisasterTech Solutions."
             icon={<Rocket className="w-5 h-5" />}
-            linkText="Register Now"
-            linkHref="#register"
           />
         </div>
       ),
     },
     {
-      title: "Ideation Phase",
+      title: "Jan 2, 2025",
       content: (
         <div className="w-full h-full">
           <GradientCard
-            title="Problem Statement Selection"
-            description="Choose from four exciting tracks: FinTech & Wellness, CivicTech Solutions, Supply Chain Innovation, or DisasterTech Solutions. Teams will analyze the problem statements, research existing solutions, and design their multi-agent AI architecture. Mentors will be available for guidance throughout this phase."
+            title="Hackathon Kickoff & Ideation"
+            description="Round 1 officially begins! Start working on your idea submission and prototype. Download the official PPT template, analyze problem statements, and design your multi-agent AI solution. This is a FREE round - no event pass required. Focus on innovation, feasibility, and impact."
             icon={<Target className="w-5 h-5" />}
-            linkText="View Challenges"
-            linkHref="#ps"
           />
         </div>
       ),
     },
     {
-      title: "Development Sprint",
+      title: "Jan 11, 2025",
       content: (
         <div className="w-full h-full">
           <GradientCard
-            title="Build Your AI Agent Solution"
-            description="The main hackathon period where teams develop their AI agent systems. Access free cloud credits, API keys, and technical support. Daily check-ins with mentors ensure you're on track. Focus on innovation, scalability, and real-world impact while building your prototype."
+            title="Round 1 Submission Deadline"
+            description="Submit your complete package: PPT using official template, working prototype (hosted on Vercel/Netlify/Render), 1-2 minute demo video, and GitHub repository with documentation. Late submissions will NOT be accepted. Ensure all deliverables meet the submission requirements."
+            icon={<Code className="w-5 h-5" />}
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Jan 23, 2025",
+      content: (
+        <div className="w-full h-full">
+          <GradientCard
+            title="Shortlist Announcement"
+            description="Shortlisted teams will be notified via the Team Lead's registered email. Selected teams must purchase the event pass to participate in the Final Round at Thiran. Prepare for live demonstrations, detailed explanations, and Q&A sessions with industry expert judges."
             icon={<Calendar className="w-5 h-5" />}
-            linkText="Learn More"
-            linkHref="#timeline"
           />
         </div>
       ),
     },
     {
-      title: "Final Presentations",
+      title: "Feb 4, 2026",
       content: (
         <div className="w-full h-full">
           <GradientCard
-            title="Showcase & Awards Ceremony"
-            description="Present your AI agent solution to industry experts and judges. Demonstrate your innovation, technical implementation, and real-world impact. Winners will be announced across multiple categories including Best Overall, Best Innovation, and domain-specific awards. Total prize pool of ₹5,00,000 awaits!"
+            title="Final Round at Thiran"
+            description="Live presentation and demonstration to judges from 9:30 AM to 5:00 PM. Showcase your AI agent solution's innovation, technical execution, impact, and presentation quality. Winners announced based on problem statements. Total prize pool of ₹5,00,000 plus recognition and networking opportunities await!"
             icon={<Award className="w-5 h-5" />}
-            linkText="View Prizes"
-            linkHref="#prizes"
           />
         </div>
       ),

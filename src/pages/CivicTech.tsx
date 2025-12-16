@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { StackedCards } from '@/components/ui/glass-cards'
+import { AnimatedBackButton } from '@/components/ui/animated-back-button'
+import { AnimatedText } from '@/components/ui/animated-shiny-text'
 
 const civicTechCards = [
   {
@@ -34,11 +36,21 @@ const CivicTech = () => {
   }, []);
 
   return (
-    <StackedCards 
-      title="CivicTech Solutions"
-      subtitle="Empowering Communities"
-      cards={civicTechCards}
-    />
+    <div className="relative">
+      <AnimatedBackButton />
+      <div className="pt-20">
+        <div className="flex justify-center items-center pt-8">
+          <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] font-bold text-white text-center">
+            CivicTech Solutions
+          </h1>
+        </div>
+        <StackedCards 
+          title=""
+          subtitle=""
+          cards={civicTechCards}
+        />
+      </div>
+    </div>
   )
 }
 

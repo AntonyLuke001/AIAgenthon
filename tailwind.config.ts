@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        audiowide : ['Audiowide','sans-serif']
+        audiowide : ['Audiowide','sans-serif'],
+        funneldisplay : ['Funnel Display','sans-serif']
 
       },
       colors: {

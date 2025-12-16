@@ -330,9 +330,10 @@ const ElectricCard = ({
         }
 
         .title {
-          font-size: 2.25em;
+          font-size: 2em;
           font-weight: 500;
           margin-top: auto;
+          font-family: 'Funnel Display', sans-serif;
         }
 
         .description {

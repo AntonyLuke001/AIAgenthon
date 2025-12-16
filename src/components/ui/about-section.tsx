@@ -3,6 +3,7 @@ import { TimelineContent } from "@/components/ui/timeline-animation";
 import {VerticalCutReveal} from "@/components/ui/vertical-cut-reveal";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import CollegeVideo from "@/assets/videoplayback.mp4";
 
 export default function AboutSection3() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -40,7 +41,7 @@ export default function AboutSection3() {
     <section id="about" className="py-16 px-4 md:px-8 lg:px-12 bg-gradient-to-br from-black via-gray-900 to-black" ref={heroRef}>
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-4xl font-semibold mt-8 mb-8 text-center" >ABOUT US</h2>
+        <h2 className="text-4xl font-semibold mt-8 mb-8 text-center font-audiowide" >ABOUT US</h2>
         <div className="relative">
           {/* Header with social icons */}
           <div className="flex justify-between items-center mb-8 w-[85%] absolute lg:top-4 md:top-0 sm:-top-2 -top-3 z-10">
@@ -53,59 +54,10 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-sm font-medium text-gray-400"
               >
-                WHO WE ARE
+                SRI ESHWAR COLLEGE OF ENGINEERING
               </TimelineContent>
             </div>
-            <div className="flex gap-4">
-              <TimelineContent
-                as="a"
-                animationNum={0}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-cyan-500/30 bg-cyan-500/10  rounded-lg flex items-center justify-center hover:bg-cyan-500/20 transition-all cursor-pointer"
-              >
-                <img src="https://pro-section.ui-layouts.com/facebook.svg" alt="fb" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={1}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-purple-500/30 bg-purple-500/10 rounded-lg flex items-center justify-center hover:bg-purple-500/20 transition-all cursor-pointer"
-              >
-                <img src="https://pro-section.ui-layouts.com/instagram.svg" alt="insta" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={2}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-blue-500/30 bg-blue-500/10 rounded-lg flex items-center justify-center hover:bg-blue-500/20 transition-all cursor-pointer"
-              >
-                <img src="https://pro-section.ui-layouts.com/linkedin.svg" alt="linkedin" width={24} height={24} />
-              </TimelineContent>
-              <TimelineContent
-                as="a"
-                animationNum={3}
-                timelineRef={heroRef}
-                customVariants={revealVariants}
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-cyan-500/30 bg-cyan-500/10 rounded-lg flex items-center justify-center hover:bg-cyan-500/20 transition-all cursor-pointer"
-              >
-                <img src="https://pro-section.ui-layouts.com/youtube.svg" alt="youtube" width={24} height={24} />
-              </TimelineContent>
-            </div>
+            
           </div>
 
           <TimelineContent
@@ -132,13 +84,22 @@ export default function AboutSection3() {
                   />
                 </clipPath>
               </defs>
-              <image
+              <foreignObject
                 clipPath="url(#clip-inverted)"
-                preserveAspectRatio="xMidYMid slice"
                 width={"100%"}
                 height={"100%"}
-                xlinkHref="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&auto=format&fit=crop"
-              ></image>
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                  style={{ objectFit: 'cover' }}
+                >
+                  <source src={CollegeVideo} type="video/mp4" />
+                </video>
+              </foreignObject>
             </svg>
           </TimelineContent>
 
@@ -152,13 +113,13 @@ export default function AboutSection3() {
               className="flex gap-4"
             >
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-cyan-500 font-bold">5+</span>
-                <span className="text-gray-400">years of innovation</span>
+                <span className="text-cyan-500 font-bold">12th</span>
+                <span className="text-gray-400">Position in Tamil Nadu TNEA 2025</span>
                 <span className="text-gray-600">|</span>
               </div>
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-purple-500 font-bold">1000+</span>
-                <span className="text-gray-400">participants</span>
+                <span className="text-purple-500 font-bold">6th</span>
+                <span className="text-gray-400">Rank in Coimbatore</span>
               </div>
             </TimelineContent>
             <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
@@ -170,7 +131,7 @@ export default function AboutSection3() {
                 className="flex lg:text-4xl sm:text-3xl text-2xl items-center gap-2 mb-2"
               >
                 <span className="text-cyan-500 font-semibold">50+</span>
-                <span className="text-gray-300 uppercase">sponsors</span>
+                <span className="text-gray-300 uppercase">Global Partnerships</span>
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -179,8 +140,8 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="flex items-center gap-2 mb-2 sm:text-base text-xs"
               >
-                <span className="text-purple-500 font-bold">100%</span>
-                <span className="text-gray-400">AI-powered</span>
+                <span className="text-purple-500 font-bold">NIRF 2025</span>
+                <span className="text-gray-400">201-300 Ranked</span>
                 <span className="text-gray-600 lg:hidden block">|</span>
               </TimelineContent>
             </div>
@@ -202,7 +163,7 @@ export default function AboutSection3() {
                   delay: 3,
                 }}
               >
-                Building the Future with AI Agents
+                Toppers' Top Choice. Experiential Learning. Fantabulous Campus.
               </VerticalCutReveal>
             </h1>
 
@@ -221,9 +182,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  Our journey began with a vision to empower innovators through AI technology. 
-                  We bring together the brightest minds to create intelligent agents that solve 
-                  real-world problems.
+                  Sri Eshwar is the most preferred institution for high ranking students. 
+                  With industry relevant curriculum, project based learning, high energy faculty, 
+                  corporate-like facilities, best amenities and vibrant activities, Sri Eshwar is 
+                  the most sought after institution for high quality and holistic education.
                 </p>
               </TimelineContent>
               <TimelineContent
@@ -234,9 +196,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  Every innovation starts with a challenge, and we specialize in turning challenges 
-                  into opportunities. Join us in shaping the future of artificial intelligence through 
-                  collaboration and creativity.
+                  What's more? We are proud to emerge, every year, as a TOP PLACEMENTS COLLEGE! 
+                  With 50+ partnerships with universities around the world and being among the 
+                  Top 2% scientists of the world, Sri Eshwar continues to set benchmarks in 
+                  engineering education.
                 </p>
               </TimelineContent>
             </TimelineContent>
@@ -251,7 +214,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-cyan-500 text-2xl font-bold mb-2"
               >
-                AI AGENTATHON
+                SRI ESHWAR
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -260,7 +223,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-gray-400 text-sm mb-8"
               >
-                Innovation Hub | Technology Event
+                College of Engineering | Coimbatore
               </TimelineContent>
 
               <TimelineContent
@@ -271,7 +234,7 @@ export default function AboutSection3() {
                 className="mb-6"
               >
                 <p className="text-gray-200 font-medium mb-4">
-                  Ready to transform ideas into intelligent solutions?
+                  Ready to be part of excellence in education?
                 </p>
               </TimelineContent>
 
@@ -282,7 +245,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 hover:from-cyan-600 hover:via-purple-600 hover:to-blue-600 shadow-lg shadow-cyan-500/20 flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-white px-5 py-3 rounded-lg cursor-pointer font-semibold"
               >
-                LET'S COLLABORATE <ArrowRight className="" />
+                KNOW MORE <ArrowRight className="" />
               </TimelineContent>
             </div>
           </div>

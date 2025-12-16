@@ -36,20 +36,7 @@ export function SplineSceneBasic() {
             className="text-8xl font-bold font-audiowide"
           />
 
-          <p className="mt-4 text-neutral-300 max-w-lg tracking-tighter">
-            Team up, experiment with cutting‑edge AI tools,<br/> and turn your ideas into production‑ready agents.
-          </p>
 
-          {/* Download button */}
-          <div className="mt-6">
-            <DownloadButton 
-              pdfUrl="/b1.pdf"
-              fileName="AI-Agentathon-Brochure.pdf"
-              onDownload={() => {
-                console.log('Download initiated');
-              }}
-            />
-          </div>
           <div>
             <Countdown />
           </div>
@@ -88,6 +75,17 @@ export function SplineSceneBasic() {
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full ml-20"
           />
+          
+          {/* Download button positioned near robot's right ear */}
+          <div className="absolute top-[25%] right-[40%] z-20 transform -translate-x-1/2">
+            <DownloadButton 
+              pdfUrl="/b1.pdf"
+              fileName="AI-Agentathon-Brochure.pdf"
+              onDownload={() => {
+                console.log('Download initiated');
+              }}
+            />
+          </div>
         </div>
       </div>
     </Card>
