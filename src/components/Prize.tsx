@@ -1,45 +1,41 @@
 import React from 'react'
+import SkewCards from './ui/gradient-card-showcase'
 
-interface PrizeCardData {
-  position: string
-  emoji: string
-  amount: string
-  description: string
-}
-
-interface SpecialAward {
+interface CardData {
   title: string
+  desc: string
+  gradientFrom: string
+  gradientTo: string
+  emoji?: string
+  amount?: string
 }
 
 const Prize = () => {
-  const mainPrizes: PrizeCardData[] = [
+  const mainPrizes: CardData[] = [
     {
-      position: '1st Place',
-      emoji: '🥇',
-      amount: '₹2,00,000',
-      description: 'Champion Team + Mentorship Opportunity'
+      title: 'FIRST PRIZE',
+      emoji: '🏆',
+      amount: '15,000',
+      desc: 'Champion Team + Mentorship Opportunity + Industry Recognition',
+      gradientFrom: '#ffbc00',
+      gradientTo: '#ff0058',
     },
     {
-      position: '2nd Place',
+      title: 'SECOND PRIZE',
       emoji: '🥈',
-      amount: '₹1,50,000',
-      description: 'Runner-Up Team + Industry Recognition'
+      amount: '10,000',
+      desc: 'Runner-Up Team + Certificate of Excellence + Networking Opportunities',
+      gradientFrom: '#03a9f4',
+      gradientTo: '#ff0058',
     },
     {
-      position: '3rd Place',
+      title: 'THIRD PRIZE',
       emoji: '🥉',
-      amount: '₹1,00,000',
-      description: 'Third Place Team + Certificate of Excellence'
+      amount: '5,000',
+      desc: 'Third Place Team + Recognition Certificate + Access to Resources',
+      gradientFrom: '#4dff03',
+      gradientTo: '#00d0ff',
     }
-  ]
-
-  const specialAwards: SpecialAward[] = [
-    { title: 'Best Supply Chain Tech Agent' },
-    { title: 'Best Civic Tech Agent' },
-    { title: 'Best FinWellness Agent' },
-    { title: 'Best DisasterTech Agent' },
-    { title: 'Best Rookie Team' },
-    { title: 'Best Innovation' }
   ]
 
   return (
@@ -50,7 +46,7 @@ const Prize = () => {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-bold text-white font-audiowide mb-4">
             Prizes & Recognition
           </h2>
@@ -59,43 +55,8 @@ const Prize = () => {
           </p>
         </div>
 
-       
-       
-
-        {/* Main Prizes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-          {mainPrizes.map((prize, index) => (
-            <div
-              key={index}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:-translate-y-2 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20"
-            >
-              {/* Gradient border on hover */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 -z-10 blur" />
-              
-              <div className="text-center">
-                {/* Emoji */}
-                <div className="text-6xl mb-4">{prize.emoji}</div>
-                
-                {/* Position */}
-                <h4 className="text-xl font-bold text-white mb-3">
-                  {prize.position}
-                </h4>
-                
-                {/* Amount */}
-                <p className="text-3xl font-black bg-gradient-to-r from-teal-400 to-purple-500 bg-clip-text text-transparent mb-3">
-                  {prize.amount}
-                </p>
-                
-                {/* Description */}
-                <p className="text-sm text-neutral-400">
-                  {prize.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        
+        {/* Gradient Card Showcase */}
+        <SkewCards cards={mainPrizes} />
       </div>
     </section>
   )

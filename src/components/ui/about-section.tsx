@@ -113,26 +113,26 @@ export default function AboutSection3() {
               className="flex gap-4"
             >
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-cyan-500 font-bold">12th</span>
-                <span className="text-gray-400">Position in Tamil Nadu TNEA 2025</span>
+                <span className="text-cyan-500 font-bold">180+</span>
+                <span className="text-gray-400">Activities & Events</span>
                 <span className="text-gray-600">|</span>
               </div>
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-purple-500 font-bold">6th</span>
-                <span className="text-gray-400">Rank in Coimbatore</span>
+                <span className="text-purple-500 font-bold">8</span>
+                <span className="text-gray-400">Hackathons</span>
               </div>
             </TimelineContent>
             <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
-              <TimelineContent
+              {/* <TimelineContent
                 as="div"
                 animationNum={6}
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="flex lg:text-4xl sm:text-3xl text-2xl items-center gap-2 mb-2"
               >
-                <span className="text-cyan-500 font-semibold">50+</span>
-                <span className="text-gray-300 uppercase">Global Partnerships</span>
-              </TimelineContent>
+                <span className="text-cyan-500 font-semibold">35+</span>
+                <span className="text-gray-300 uppercase">Workshops & Master Classes</span>
+              </TimelineContent> */}
               <TimelineContent
                 as="div"
                 animationNum={7}
@@ -140,8 +140,8 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="flex items-center gap-2 mb-2 sm:text-base text-xs"
               >
-                <span className="text-purple-500 font-bold">NIRF 2025</span>
-                <span className="text-gray-400">201-300 Ranked</span>
+                <span className="text-purple-500 font-bold">3 Days</span>
+                <span className="text-gray-400">National-Level Fest</span>
                 <span className="text-gray-600 lg:hidden block">|</span>
               </TimelineContent>
             </div>
@@ -163,7 +163,7 @@ export default function AboutSection3() {
                   delay: 3,
                 }}
               >
-                Toppers' Top Choice. Experiential Learning. Fantabulous Campus.
+                Thiran 2026 is on its way! Yay!
               </VerticalCutReveal>
             </h1>
 
@@ -182,10 +182,11 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  Sri Eshwar is the most preferred institution for high ranking students. 
-                  With industry relevant curriculum, project based learning, high energy faculty, 
-                  corporate-like facilities, best amenities and vibrant activities, Sri Eshwar is 
-                  the most sought after institution for high quality and holistic education.
+                  Sri Eshwar College of Engineering, Coimbatore, presents Thiran 2026, a three-day 
+                  national-level techno-cultural-sports fest scheduled for 4th, 5th & 6th February 2026. 
+                  The event will feature 180+ activities including 8 hackathons, 35 workshops and master 
+                  classes, project expos, paper presentations, leadership talks, youth summit, tech talks, 
+                  start-up stories, pitch fest, and an international education expo.
                 </p>
               </TimelineContent>
               <TimelineContent
@@ -196,10 +197,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  What's more? We are proud to emerge, every year, as a TOP PLACEMENTS COLLEGE! 
-                  With 50+ partnerships with universities around the world and being among the 
-                  Top 2% scientists of the world, Sri Eshwar continues to set benchmarks in 
-                  engineering education.
+                  Providing a robust platform for innovation and experiential learning, Thiran 2026 
+                  complements the technical events with cultural performances, two days of mega celebrity 
+                  shows, and a sports fest. Join us for an unforgettable experience of learning, networking, 
+                  and entertainment at one of South India's most anticipated collegiate events.
                 </p>
               </TimelineContent>
             </TimelineContent>
@@ -213,8 +214,7 @@ export default function AboutSection3() {
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="text-cyan-500 text-2xl font-bold mb-2"
-              >
-                SRI ESHWAR
+              >THIRAN 2026
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -223,7 +223,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-gray-400 text-sm mb-8"
               >
-                College of Engineering | Coimbatore
+                4th, 5th & 6th February 2026
               </TimelineContent>
 
               <TimelineContent
@@ -234,7 +234,7 @@ export default function AboutSection3() {
                 className="mb-6"
               >
                 <p className="text-gray-200 font-medium mb-4">
-                  Ready to be part of excellence in education?
+                  Ready to be part of South India's biggest techno-cultural fest?
                 </p>
               </TimelineContent>
 
@@ -245,6 +245,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 hover:from-cyan-600 hover:via-purple-600 hover:to-blue-600 shadow-lg shadow-cyan-500/20 flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-white px-5 py-3 rounded-lg cursor-pointer font-semibold"
               >
+                REGISTER NOW
                 KNOW MORE <ArrowRight className="" />
               </TimelineContent>
             </div>
