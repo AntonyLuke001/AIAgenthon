@@ -79,8 +79,8 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
         disabled={isDownloading || isComplete}
         className={`
           relative overflow-hidden rounded-full 
-          bg-black px-6 py-3
-          font-medium text-base
+          bg-black px-4 py-2 sm:px-6 sm:py-3
+          font-medium text-sm sm:text-base
           ${isDownloading || isComplete ? 'cursor-wait' : 'cursor-pointer'}
         `}
         initial={{ opacity: 0 }}

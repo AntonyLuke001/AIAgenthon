@@ -25,7 +25,7 @@ export function SplineSceneBasic() {
       <Navbar />
       <div className="flex h-full flex-col md:flex-row ">
         {/* Left content */}
-        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-48">
+        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-20 sm:mt-32 md:mt-48">
           
           <BlurText
             text="AI Agentathon"
@@ -33,7 +33,7 @@ export function SplineSceneBasic() {
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="text-8xl font-bold font-audiowide"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold font-audiowide"
           />
 
 
@@ -44,9 +44,9 @@ export function SplineSceneBasic() {
             donate-btn
             relative
             cursor-pointer
-            px-6 py-3
-            mt-10
-            w-[220px]
+            px-4 py-2 sm:px-6 sm:py-3
+            mt-6 sm:mt-10
+            w-full sm:w-[220px]
             min-h-[44px]
             text-white font-medium
             rounded-md

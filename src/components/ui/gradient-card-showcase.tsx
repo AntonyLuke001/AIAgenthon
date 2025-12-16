@@ -16,11 +16,11 @@ interface SkewCardsProps {
 export default function SkewCards({ cards }: SkewCardsProps) {
   return (
     <>
-      <div className="flex justify-center items-center flex-wrap  min-h-screen">
+      <div className="flex justify-center items-center flex-wrap py-10 min-h-screen">
         {cards.map(({ title, desc, gradientFrom, gradientTo, emoji, amount }, idx) => (
           <div
             key={idx}
-            className="group relative w-[320px] h-[400px] m-[40px_30px] transition-all duration-500"
+            className="group relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] m-[20px_15px] sm:m-[40px_30px] transition-all duration-500"
           >
             {/* Skewed gradient panels */}
             <span
@@ -43,17 +43,17 @@ export default function SkewCards({ cards }: SkewCardsProps) {
             </span>
 
             {/* Content */}
-            <div className="relative z-20 left-0 p-[20px_40px] bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] shadow-lg rounded-lg text-white transition-all duration-500 group-hover:left-[-25px] group-hover:p-[60px_40px]">
+            <div className="relative z-20 left-0 p-[16px_24px] sm:p-[20px_40px] bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] shadow-lg rounded-lg text-white transition-all duration-500 group-hover:left-[-25px] group-hover:p-[40px_24px] sm:group-hover:p-[60px_40px]">
               {emoji && (
-                <div className="text-6xl mb-4 text-center">{emoji}</div>
+                <div className="text-4xl sm:text-6xl mb-3 sm:mb-4 text-center">{emoji}</div>
               )}
-              <h2 className="text-2xl mb-2 font-bold">{title}</h2>
+              <h2 className="text-xl sm:text-2xl mb-2 font-bold font-bebas">{title}</h2>
               {amount && (
-                <p className="text-4xl font-black mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <p className="text-3xl sm:text-4xl font-black mb-2 sm:mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   {amount}
                 </p>
               )}
-              <p className="text-lg leading-relaxed mb-2">{desc}</p>
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-2">{desc}</p>
             </div>
           </div>
         ))}

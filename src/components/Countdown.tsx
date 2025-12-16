@@ -61,7 +61,7 @@ const Countdown = () => {
     return (
       <div 
         key={digit} 
-        className={`grid grid-cols-3 grid-rows-5 gap-1.5 w-12 h-20 ${hasChanged ? 'animate-flip-in' : ''}`}
+        className={`grid grid-cols-3 grid-rows-5 gap-0.5 sm:gap-1 md:gap-1.5 w-8 h-14 sm:w-10 sm:h-16 md:w-12 md:h-20 ${hasChanged ? 'animate-flip-in' : ''}`}
       >
         {Array.from({ length: 15 }, (_, i) => i + 1).map((segment) => {
           const isActive = activeSegments.includes(segment);
@@ -94,8 +94,8 @@ const Countdown = () => {
           <div className="absolute -inset-2 bg-gradient-to-r from-cyan-300 via-blue-400 to-sky-500 rounded-lg blur-md opacity-30 group-hover:opacity-50 transition duration-500"></div>
           
           {/* Counter box */}
-          <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm border border-sky-400/40 rounded-lg px-4 py-4 shadow-[0_0_20px_rgba(56,189,248,0.4)]">
-            <div className="flex gap-3">
+          <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm border border-sky-400/40 rounded-lg px-2 py-2 sm:px-3 sm:py-3 md:px-4 md:py-4 shadow-[0_0_20px_rgba(56,189,248,0.4)]">
+            <div className="flex gap-1 sm:gap-2 md:gap-3">
               <AnimatedDigit digit={digits[0]} prevDigit={prevDigits?.[0]} />
               <AnimatedDigit digit={digits[1]} prevDigit={prevDigits?.[1]} />
             </div>
