@@ -1,16 +1,26 @@
-import { SplineSceneBasic } from "@/components/SplineSceneBasic";
+import { lazy, Suspense } from "react";
 import { Spotlight } from "@/components/ui/spotlight";
 import  Navbar  from "@/components/Navbar";
-import About from "../components/About";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import { VantaBackground } from "@/components/ui/vanta-background";
-import Theme from "@/components/Theme";
-import PS from "@/components/PS";
-import Timeline from "@/components/Timeline";
-import Guidlines from "@/components/Guidlines";
-import Prize from "@/components/Prize";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+
+// Lazy load heavy components
+const SplineSceneBasic = lazy(() => import("@/components/SplineSceneBasic").then(m => ({ default: m.SplineSceneBasic })));
+const About = lazy(() => import("../components/About"));
+const Theme = lazy(() => import("@/components/Theme"));
+const PS = lazy(() => import("@/components/PS"));
+const Timeline = lazy(() => import("@/components/Timeline"));
+const Guidlines = lazy(() => import("@/components/Guidlines"));
+const Prize = lazy(() => import("@/components/Prize"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Loading fallback
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
+  </div>
+);
 
 const Index = () => {
   return (
@@ -24,31 +34,49 @@ const Index = () => {
       {/* Cursor animation */}
       <CursorGlow />
       <div className="w-full h-[80%] relative z-10">
-        <SplineSceneBasic />
+        <Suspense fallback={<LoadingSpinner />}>
+          <SplineSceneBasic />
+        </Suspense>
       </div>
       <div id="about" className="relative z-10">
-        <About />
+        <Suspense fallback={<LoadingSpinner />}>
+          <About />
+        </Suspense>
       </div>
       <div id="theme" className="relative z-10">
-        <Theme/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Theme/>
+        </Suspense>
       </div>
       <div id="ps" className="relative z-10">
-        <PS/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <PS/>
+        </Suspense>
       </div>
       <div id="timeline">
-        <Timeline/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Timeline/>
+        </Suspense>
       </div>
       <div id="guidelines">
-        <Guidlines/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Guidlines/>
+        </Suspense>
       </div>
       <div id="prizes">
-        <Prize/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Prize/>
+        </Suspense>
       </div>
       <div id="faqs">
-        <FAQ/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <FAQ/>
+        </Suspense>
       </div>
       <div>
-        <Footer/>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Footer/>
+        </Suspense>
       </div>
     </div>
     

@@ -111,7 +111,7 @@ const Countdown = () => {
   };
 
   return (
-    <div className="flex items-center justify-start gap-3 md:gap-4 mt-8">
+    <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 mt-8 w-full">
       <style>{`
         @keyframes pulse-glow {
           0%, 100% {
@@ -146,11 +146,11 @@ const Countdown = () => {
         }
       `}</style>
       <TimeUnit value={timeLeft.days} label="Days" prevValue={prevTimeRef.current.days} />
-      <span className="text-3xl md:text-4xl text-sky-400/60 mb-8">:</span>
+      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-sky-400/60 mb-8 flex-shrink-0">:</span>
       <TimeUnit value={timeLeft.hours} label="Hours" prevValue={prevTimeRef.current.hours} />
-      <span className="text-3xl md:text-4xl text-sky-400/60 mb-8">:</span>
+      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-sky-400/60 mb-8 flex-shrink-0">:</span>
       <TimeUnit value={timeLeft.minutes} label="Mins" prevValue={prevTimeRef.current.minutes} />
-      <span className="text-3xl md:text-4xl text-sky-400/60 mb-8">:</span>
+      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-sky-400/60 mb-8 flex-shrink-0">:</span>
       <TimeUnit value={timeLeft.seconds} label="Secs" prevValue={prevTimeRef.current.seconds} />
     </div>
   );

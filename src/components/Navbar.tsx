@@ -19,26 +19,28 @@ const Navbar = () => {
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
+    setIsOpen(false) // Close mobile menu immediately
+    
     const targetId = href.replace('#', '')
     const targetElement = document.getElementById(targetId)
     
     if (targetElement) {
-      const navbarHeight = 80 // Approximate navbar height
-      const targetPosition = targetElement.offsetTop - navbarHeight
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      })
+      // Use setTimeout to ensure menu closes before scrolling
+      setTimeout(() => {
+        const navbarHeight = 80 // Approximate navbar height
+        const targetPosition = targetElement.offsetTop - navbarHeight
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
+      }, 100)
       
       // Update URL without causing a page jump
       window.history.pushState(null, '', href)
-      
-      setIsOpen(false) // Close mobile menu if open
     } else {
       // Fallback: if element not found, just update URL and let browser handle it
       window.location.hash = href
-      setIsOpen(false)
     }
   }
 
@@ -56,10 +58,10 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-500 ${
         scrolled 
           ? 'bg-black/90 backdrop-blur-3xl border-b border-cyan-500/30 shadow-[0_8px_32px_rgba(6,182,212,0.15)]' 
-          : 'bg-transparent border-b border-transparent'
+          : 'bg-black/50 backdrop-blur-md border-b border-transparent'
       }`}
     >
       {/* Top glow effect */}
@@ -116,7 +118,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <motion.button 
-          className="md:hidden relative text-white p-2 rounded-lg overflow-hidden group"
+          className="md:hidden relative text-white p-2 rounded-lg overflow-hidden group z-[110]"
           onClick={() => setIsOpen(!isOpen)}
           whileTap={{ scale: 0.9 }}
         >
@@ -133,7 +135,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-gradient-to-b from-black/95 to-black/90 border-t border-cyan-500/20 backdrop-blur-2xl"
+            className="md:hidden bg-gradient-to-b from-black/95 to-black/90 border-t border-cyan-500/20 backdrop-blur-2xl overflow-hidden"
           >
             <div className="flex flex-col space-y-2 px-6 py-6">
               {navItems.map((item, index) => (
@@ -159,14 +161,18 @@ const Navbar = () => {
               
               {/* Mobile CTA Button */}
               <motion.a 
-                href="#register"
+                href="/"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 className="relative bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 text-white px-8 py-4 rounded-xl font-semibold text-center mt-4 overflow-hidden group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setIsOpen(false)
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300" />

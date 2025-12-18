@@ -56,7 +56,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+            <div className="sticky flex flex-col md:flex-row z-40 items-center top-20 md:top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[#0a0a0f] flex items-center justify-center">
                 <motion.div 
                   className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2"
@@ -93,7 +93,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <motion.h3 
-                className="md:hidden block text-2xl mb-4 text-left font-bold"
+                className="md:hidden block text-lg sm:text-xl mb-6 text-left font-bold"
                 animate={{
                   color: activeIndex === index ? "#38bdf8" : "#737373",
                   textShadow: activeIndex === index 

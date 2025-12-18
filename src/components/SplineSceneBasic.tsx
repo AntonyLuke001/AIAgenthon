@@ -37,7 +37,7 @@ export function SplineSceneBasic() {
           />
 
 
-          <div>
+          <div className="w-full ">
             <Countdown />
           </div>
           <button className="
@@ -69,8 +69,8 @@ export function SplineSceneBasic() {
 
         </div>
 
-        {/* Right content */}
-        <div className="flex-1 relative">
+        {/* Right content - Hidden on mobile */}
+        <div className="flex-1 relative hidden md:block">
           <SplineScene 
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full ml-20"
