@@ -12,7 +12,8 @@ const Footer = () => {
   ]
 
   const coordinators = [
-    { name: "Mr.Yeshwanth Saran Sundar", phone: "86080 84220" }
+    { name: "Dr.G.Shobana", phone: "+91 99620 04041", role: "Faculty Coordinator" },
+    { name: "Yaswanth Saran Sundar P", phone: "8608084220", role: "Student Coordinator" }
   ]
 
   return (
@@ -39,19 +40,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Middle Section - Student Coordinators */}
+          {/* Middle Section - Coordinators */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xl font-bold text-white mb-6 relative inline-block">
-              Student Coordinators
+              Coordinators
               <span className="absolute -bottom-2 left-0 w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full" />
             </h3>
             <div className="space-y-3">
               {coordinators.map((coordinator, index) => (
-                <div key={index} className="flex items-center space-x-2 text-neutral-300 hover:text-cyan-400 transition-colors duration-300 group">
-                  <Phone className="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform" />
-                  <a href={`tel:${coordinator.phone}`} className="hover:underline">
-                    {coordinator.phone} - ({coordinator.name})
-                  </a>
+                <div key={index} className="space-y-1">
+                  <p className="text-sm font-semibold text-cyan-400">{coordinator.role}</p>
+                  <div className="flex items-center space-x-2 text-neutral-300 hover:text-cyan-400 transition-colors duration-300 group">
+                    <Phone className="w-4 h-4 text-cyan-500 group-hover:scale-110 transition-transform" />
+                    <a href={`tel:${coordinator.phone}`} className="hover:underline">
+                      {coordinator.name} - {coordinator.phone}
+                    </a>
+                  </div>
                 </div>
               ))}
               
