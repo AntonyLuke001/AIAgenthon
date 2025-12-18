@@ -8,13 +8,29 @@ import  Navbar  from "@/components/Navbar";
 import BlurText from "@/components/ui/blurtext";
 import  Countdown  from "@/components/Countdown";
 import { DownloadButton } from "@/components/ui/download-animation";
+import { useState, useEffect } from "react";
 
 
 const handleAnimationComplete = () => {
   console.log('Animation completed!');
 };
 
-export function SplineSceneBasic() {
+interface SplineSceneBasicProps {
+  onLoad?: () => void;
+}
+
+export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
+  const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
+
+  useEffect(() => {
+    // Defer Spline loading until after critical content is rendered
+    const timer = setTimeout(() => {
+      setShouldLoadSpline(true);
+    }, 800); // Load 3D scene after 800ms
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Card className="w-full h-screen border-none bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden px-4 md:px-8 lg:px-12">
       <Spotlight
@@ -71,21 +87,26 @@ export function SplineSceneBasic() {
 
         {/* Right content - Hidden on mobile */}
         <div className="flex-1 relative hidden md:block">
-          <SplineScene 
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full ml-20"
-          />
-          
-          {/* Download button positioned near robot's right ear */}
-          <div className="absolute top-[25%] right-[40%] z-20 transform -translate-x-1/2">
-            <DownloadButton 
-              pdfUrl="/b1.pdf"
-              fileName="AI-Agentathon-Brochure.pdf"
-              onDownload={() => {
-                console.log('Download initiated');
-              }}
-            />
-          </div>
+          {shouldLoadSpline && (
+            <>
+              <SplineScene 
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full ml-20"
+                onLoad={onLoad}
+              />
+              
+              {/* Download button positioned near robot's right ear */}
+              <div className="absolute top-[25%] right-[40%] z-20 transform -translate-x-1/2">
+                <DownloadButton 
+                  pdfUrl="/b1.pdf"
+                  fileName="AI-Agentathon-Brochure.pdf"
+                  onDownload={() => {
+                    console.log('Download initiated');
+                  }}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </Card>

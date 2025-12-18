@@ -1,8 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Spotlight } from "@/components/ui/spotlight";
 import  Navbar  from "@/components/Navbar";
 import { CursorGlow } from "@/components/ui/cursor-glow";
 import { VantaBackground } from "@/components/ui/vanta-background";
+import ThiranLogo from "@/assets/ThiranLogo.png";
 
 // Lazy load heavy components
 const SplineSceneBasic = lazy(() => import("@/components/SplineSceneBasic").then(m => ({ default: m.SplineSceneBasic })));
@@ -15,16 +16,33 @@ const Prize = lazy(() => import("@/components/Prize"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-// Loading fallback
+// Loading fallback with Thiran logo
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-[200px]">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
+  <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+    <img 
+      src={ThiranLogo} 
+      alt="Loading..." 
+      className="w-48 h-48 object-contain animate-pulse"
+    />
   </div>
 );
 
 const Index = () => {
+  const [is3DLoaded, setIs3DLoaded] = useState(false);
+
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Show Thiran logo until 3D scene is fully loaded */}
+      {!is3DLoaded && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+          <img 
+            src={ThiranLogo} 
+            alt="Loading..." 
+            className="w-48 h-48 object-contain animate-pulse"
+          />
+        </div>
+      )}
+      
       {/* Vanta.js animated network background */}
       {/* <VantaBackground /> */}
       
@@ -33,51 +51,35 @@ const Index = () => {
       
       {/* Cursor animation */}
       <CursorGlow />
-      <div className="w-full h-[80%] relative z-10">
-        <Suspense fallback={<LoadingSpinner />}>
-          <SplineSceneBasic />
-        </Suspense>
-      </div>
-      <div id="about" className="relative z-10">
-        <Suspense fallback={<LoadingSpinner />}>
+      <Suspense fallback={null}>
+        <div className="w-full h-[80%] relative z-10">
+          <SplineSceneBasic onLoad={() => setIs3DLoaded(true)} />
+        </div>
+        <div id="about" className="relative z-10">
           <About />
-        </Suspense>
-      </div>
-      <div id="theme" className="relative z-10">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="theme" className="relative z-10">
           <Theme/>
-        </Suspense>
-      </div>
-      <div id="ps" className="relative z-10">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="ps" className="relative z-10">
           <PS/>
-        </Suspense>
-      </div>
-      <div id="timeline">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="timeline">
           <Timeline/>
-        </Suspense>
-      </div>
-      <div id="guidelines">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="guidelines">
           <Guidlines/>
-        </Suspense>
-      </div>
-      <div id="prizes">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="prizes">
           <Prize/>
-        </Suspense>
-      </div>
-      <div id="faqs">
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div id="faqs">
           <FAQ/>
-        </Suspense>
-      </div>
-      <div>
-        <Suspense fallback={<LoadingSpinner />}>
+        </div>
+        <div>
           <Footer/>
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     </div>
     
   );
