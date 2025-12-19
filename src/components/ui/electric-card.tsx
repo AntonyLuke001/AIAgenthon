@@ -272,16 +272,30 @@ const ElectricCard = ({
         .content-top {
           display: flex;
           flex-direction: column;
-          padding: 48px;
-          padding-bottom: 16px;
+          padding: 24px;
+          padding-bottom: 12px;
           height: 100%;
+        }
+
+        @media (min-width: 768px) {
+          .content-top {
+            padding: 48px;
+            padding-bottom: 16px;
+          }
         }
 
         .content-bottom {
           display: flex;
           flex-direction: column;
-          padding: 48px;
-          padding-top: 16px;
+          padding: 24px;
+          padding-top: 12px;
+        }
+
+        @media (min-width: 768px) {
+          .content-bottom {
+            padding: 48px;
+            padding-top: 16px;
+          }
         }
 
         .scrollbar-glass {
@@ -296,12 +310,20 @@ const ElectricCard = ({
           border-radius: 14px;
           width: fit-content;
           height: fit-content;
-          padding: 0.5em 1em;
+          padding: 0.4em 0.8em;
           text-transform: uppercase;
           font-weight: bold;
-          font-size: 0.85em;
+          font-size: 0.65em;
           color: rgba(255, 255, 255, 0.8);
         }
+
+        @media (min-width: 768px) {
+          .scrollbar-glass {
+            padding: 0.5em 1em;
+            font-size: 0.85em;
+          }
+        }
+
         .scrollbar-glass:hover {
           background: radial-gradient(
               47.2% 50% at 50.39% 88.37%,
@@ -330,14 +352,27 @@ const ElectricCard = ({
         }
 
         .title {
-          font-size: 2em;
+          font-size: 1.2em;
           font-weight: 500;
           margin-top: auto;
           font-family: 'Funnel Display', sans-serif;
         }
 
+        @media (min-width: 768px) {
+          .title {
+            font-size: 2em;
+          }
+        }
+
         .description {
           opacity: 0.5;
+          font-size: 0.75em;
+        }
+
+        @media (min-width: 768px) {
+          .description {
+            font-size: 1em;
+          }
         }
 
         .divider {

@@ -36,6 +36,10 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
         const container = containerRef.current;
         if (!card || !container) return;
 
+        // Only apply stacking animation on desktop (768px and above)
+        const isMobile = window.innerWidth < 768;
+        if (isMobile) return;
+
         const targetScale = 1 - (totalCards - index) * 0.05;
 
         // Set initial state
@@ -69,26 +73,39 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
     return (
         <div
             ref={containerRef}
-            className="px-4 md:px-8 lg:px-12"
+            className="px-4 md:px-8 lg:px-12 mb-6 md:mb-0"
             style={{
-                height: '100vh',
+                height: 'auto',
+                minHeight: '100vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                position: 'sticky',
-                top: 0
+                position: 'relative'
             }}
         >
+            <style>
+                {`
+                    @media (min-width: 768px) {
+                        .card-container-${index} {
+                            position: sticky !important;
+                            top: 0 !important;
+                            height: 100vh !important;
+                        }
+                    }
+                `}
+            </style>
+            <div className={`card-container-${index}`} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div
                 ref={cardRef}
                 style={{
                     position: 'relative',
                     width: '100%',
                     maxWidth: '90%',
-                    height: '600px',
+                    height: 'auto',
+                    minHeight: '500px',
+                    maxHeight: '80vh',
                     borderRadius: '24px',
                     isolation: 'isolate',
-                    top: `calc(-5vh + ${index * 25}px)`,
                     transformOrigin: 'top'
                 }}
                 className="card-content"
@@ -142,8 +159,8 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
-                    padding: '3rem',
+                    justifyContent: 'flex-start',
+                    padding: '2rem',
                     borderRadius: '24px',
                     background: 'rgba(10, 10, 15, 0.85)',
                     backdropFilter: 'blur(40px) saturate(150%)',
@@ -155,15 +172,46 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                         inset 0 -1px 0 rgba(0, 0, 0, 0.5),
                         0 0 60px ${color.replace('0.8', '0.08')}
                     `,
-                    overflow: 'hidden'
-                }}>
+                    overflow: 'auto',
+                    maxHeight: '80vh'
+                }} className="mobile-scrollable-card">
+                    <style>
+                        {`
+                            @media (min-width: 768px) {
+                                .mobile-scrollable-card {
+                                    justify-content: center !important;
+                                    padding: 3rem !important;
+                                    overflow: hidden !important;
+                                    max-height: none !important;
+                                }
+                            }
+                            
+                            .mobile-scrollable-card::-webkit-scrollbar {
+                                width: 8px;
+                            }
+                            
+                            .mobile-scrollable-card::-webkit-scrollbar-track {
+                                background: rgba(255, 255, 255, 0.05);
+                                border-radius: 4px;
+                            }
+                            
+                            .mobile-scrollable-card::-webkit-scrollbar-thumb {
+                                background: ${color.replace('0.8', '0.5')};
+                                border-radius: 4px;
+                            }
+                            
+                            .mobile-scrollable-card::-webkit-scrollbar-thumb:hover {
+                                background: ${color.replace('0.8', '0.7')};
+                            }
+                        `}
+                    </style>
                     {/* Aurora Background for Card */}
                     <AuroraBackground />
 
                     {/* Content */}
-                    <div style={{ position: 'relative', zIndex: 1 }}>
+                    <div style={{ position: 'relative', zIndex: 1, paddingBottom: '1rem' }}>
                         <h2 style={{
-                            fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
+                            fontSize: 'clamp(1.3rem, 3.5vw, 3rem)',
                             fontWeight: '700',
                             marginBottom: '1.5rem',
                             color: 'white',
@@ -183,7 +231,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                         {/* Context Section */}
                         <div style={{ marginBottom: '1.5rem' }}>
                             <h3 style={{
-                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontSize: 'clamp(0.9rem, 1.5vw, 1.3rem)',
                                 fontWeight: '600',
                                 color: color.replace('0.8', '1'),
                                 marginBottom: '0.5rem',
@@ -193,7 +241,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                                 Context
                             </h3>
                             <p style={{
-                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                fontSize: 'clamp(0.85rem, 1.3vw, 1.1rem)',
                                 color: 'rgba(255, 255, 255, 0.85)',
                                 lineHeight: '1.6',
                                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
@@ -205,7 +253,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                         {/* Challenge Section */}
                         <div style={{ marginBottom: '1.5rem' }}>
                             <h3 style={{
-                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontSize: 'clamp(0.9rem, 1.5vw, 1.3rem)',
                                 fontWeight: '600',
                                 color: color.replace('0.8', '1'),
                                 marginBottom: '0.5rem',
@@ -215,7 +263,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                                 The Challenge
                             </h3>
                             <p style={{
-                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                fontSize: 'clamp(0.85rem, 1.3vw, 1.1rem)',
                                 color: 'rgba(255, 255, 255, 0.85)',
                                 lineHeight: '1.6',
                                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
@@ -227,7 +275,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                         {/* Participants Section */}
                         <div>
                             <h3 style={{
-                                fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)',
+                                fontSize: 'clamp(0.9rem, 1.5vw, 1.3rem)',
                                 fontWeight: '600',
                                 color: color.replace('0.8', '1'),
                                 marginBottom: '0.5rem',
@@ -237,7 +285,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                                 What Participants Can Do
                             </h3>
                             <p style={{
-                                fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+                                fontSize: 'clamp(0.85rem, 1.3vw, 1.1rem)',
                                 color: 'rgba(255, 255, 255, 0.85)',
                                 lineHeight: '1.6',
                                 textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
@@ -247,6 +295,7 @@ const Card: React.FC<CardProps> = ({ title, context, challenge, participants, in
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

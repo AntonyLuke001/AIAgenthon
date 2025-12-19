@@ -36,11 +36,11 @@ const CivicTech = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative min-h-screen">
       <AnimatedBackButton />
-      <div className="pt-20">
-        <div className="flex justify-center items-center pt-8">
-          <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] font-bold text-white text-center">
+      <div className="pt-[140px] sm:pt-36 md:pt-40" style={{ paddingTop: 'max(140px, env(safe-area-inset-top) + 100px)' }}>
+        <div className="flex justify-center items-center py-4 sm:py-8 md:py-10 px-4 sm:px-6">
+          <h1 className="text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white text-center leading-tight break-words max-w-[90vw]">
             CivicTech Solutions
           </h1>
         </div>

@@ -52,11 +52,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-6 md:pt-40 md:gap-10"
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-20 md:top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+            <div className="sticky flex flex-col md:flex-row z-40 items-center top-16 md:top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[#0a0a0f] flex items-center justify-center">
                 <motion.div 
                   className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2"
@@ -93,7 +93,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <motion.h3 
-                className="md:hidden block text-lg sm:text-xl mb-6 text-left font-bold"
+                className="md:hidden block text-base sm:text-lg mb-3 text-left font-bold"
                 animate={{
                   color: activeIndex === index ? "#38bdf8" : "#737373",
                   textShadow: activeIndex === index 
@@ -107,7 +107,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               >
                 {item.title}
               </motion.h3>
-              {item.content}
+              <div className="md:max-h-none max-h-[280px] overflow-hidden">
+                {item.content}
+              </div>
             </div>
           </div>
         ))}

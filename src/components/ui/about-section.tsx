@@ -13,8 +13,8 @@ export default function AboutSection3() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        delay: i * 0.4,
-        duration: 0.5,
+        delay: i * 0.15,
+        duration: 0.4,
       },
     }),
     hidden: {
@@ -28,8 +28,8 @@ export default function AboutSection3() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        delay: i * 0.4,
-        duration: 0.5,
+        delay: i * 0.15,
+        duration: 0.4,
       },
     }),
     hidden: {
@@ -162,7 +162,7 @@ export default function AboutSection3() {
                   type: "spring",
                   stiffness: 250,
                   damping: 30,
-                  delay: 3,
+                  delay: 1,
                 }}
               >
                 Thiran 2026 is on its way! Yay!
