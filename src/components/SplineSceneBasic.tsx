@@ -9,10 +9,15 @@ import BlurText from "@/components/ui/blurtext";
 import  Countdown  from "@/components/Countdown";
 import { DownloadButton } from "@/components/ui/download-animation";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const handleAnimationComplete = () => {
   console.log('Animation completed!');
+};
+
+const handleRegister = () => {
+  window.location.href = 'https://thiran.sece.ac.in/';
 };
 
 interface SplineSceneBasicProps {
@@ -21,6 +26,8 @@ interface SplineSceneBasicProps {
 
 export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
   const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
+
+
 
   useEffect(() => {
     // Defer Spline loading until after critical content is rendered
@@ -79,7 +86,9 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
             focus:ring-white
             focus:ring-offset-2
             focus:ring-offset-[#3A7DE9]
-          ">
+          "
+          onClick={handleRegister}
+          >
             Register Now
           </button>
 

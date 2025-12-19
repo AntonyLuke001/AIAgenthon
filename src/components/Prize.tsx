@@ -57,6 +57,45 @@ const Prize = () => {
 
         {/* Gradient Card Showcase */}
         <SkewCards cards={mainPrizes} />
+
+        {/* Register CTA */}
+        <div className="text-center mt-16 md:mt-20">
+          <p className="text-xl md:text-2xl text-neutral-300 mb-6 max-w-3xl mx-auto">
+            Ready to showcase your AI innovation and compete for these amazing prizes?
+          </p>
+          <button
+            onClick={() => window.location.href = 'https://thiran.sece.ac.in/'}
+            className="
+              relative
+              cursor-pointer
+              px-8 py-4
+              text-lg
+              font-semibold
+              text-white
+              rounded-lg
+              transition-all duration-300
+              bg-gradient-to-r
+              from-cyan-500
+              via-purple-500
+              to-blue-500
+              hover:from-cyan-600
+              hover:via-purple-600
+              hover:to-blue-600
+              shadow-lg
+              shadow-purple-500/30
+              hover:shadow-purple-500/50
+              hover:scale-105
+              focus:outline-none
+              focus:ring-2
+              focus:ring-purple-400
+              focus:ring-offset-2
+              focus:ring-offset-black
+              font-audiowide
+            "
+          >
+            REGISTER FOR AI AGENTATHON
+          </button>
+        </div>
       </div>
     </section>
   )
