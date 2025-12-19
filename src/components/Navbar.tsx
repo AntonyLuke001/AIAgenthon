@@ -75,7 +75,13 @@ const Navbar = () => {
           transition={{ duration: 0.2 }}
         >
           <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300" />
-          <img src={Eshwar} alt="Eshwar" className='relative w-42 h-16 object-contain' />
+          <img 
+            src={Eshwar} 
+            alt="Eshwar" 
+            loading="eager"
+            decoding="async"
+            className='relative w-42 h-16 object-contain' 
+          />
         </motion.div>
 
         {/* Desktop Menu */}
@@ -113,7 +119,13 @@ const Navbar = () => {
           transition={{ duration: 0.2 }}
         >
           <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300" />
-          <img src={Thiran} alt="Thiran" className='relative h-14 object-contain' />
+          <img 
+            src={Thiran} 
+            alt="Thiran" 
+            loading="eager"
+            decoding="async"
+            className='relative h-14 object-contain' 
+          />
         </motion.div>
 
         {/* Mobile Menu Button */}
@@ -186,7 +198,13 @@ const Navbar = () => {
                 transition={{ delay: 0.7 }}
                 className="flex justify-center pt-4 border-t border-white/10 mt-4"
               >
-                <img src={Thiran} alt="Thiran" className='h-12 object-contain opacity-60' />
+                <img 
+                  src={Thiran} 
+                  alt="Thiran" 
+                  loading="lazy"
+                  decoding="async"
+                  className='h-12 object-contain opacity-60' 
+                />
               </motion.div>
             </div>
           </motion.div>

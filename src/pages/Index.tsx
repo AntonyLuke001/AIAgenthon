@@ -38,6 +38,8 @@ const Index = () => {
           <img 
             src={ThiranLogo} 
             alt="Loading..." 
+            loading="eager"
+            decoding="async"
             className="w-48 h-48 object-contain animate-pulse"
           />
         </div>

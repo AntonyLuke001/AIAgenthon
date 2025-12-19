@@ -34,7 +34,9 @@ const Footer = () => {
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src={Thiran} 
-                alt="Hackathon Logo" 
+                alt="Hackathon Logo"
+                loading="lazy"
+                decoding="async"
                 className="relative h-16 object-contain hover:opacity-100 transition-opacity duration-300"
               />
             </div>
@@ -98,7 +100,9 @@ const Footer = () => {
               <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src={Eshwar} 
-                alt="Sri Eshwar college Of Engineering" 
+                alt="Sri Eshwar college Of Engineering"
+                loading="lazy"
+                decoding="async"
                 className="relative w-48 h-auto object-contain"
               />
             </div>

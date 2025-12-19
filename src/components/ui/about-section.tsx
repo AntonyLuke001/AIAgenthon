@@ -94,6 +94,8 @@ export default function AboutSection3() {
                   loop
                   muted
                   playsInline
+                  preload="none"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{ objectFit: 'cover' }}
                 >
