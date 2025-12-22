@@ -64,7 +64,7 @@ const Prize = () => {
             Ready to showcase your AI innovation and compete for these amazing prizes?
           </p>
           <button
-            onClick={() => window.location.href = 'https://thiran.sece.ac.in/'}
+            onClick={() => window.location.href = 'https://unstop.com/p/round-1-ai-agentathon-sri-eshwar-college-of-engineering-sece-tamil-nadu-1608466'}
             className="
               relative
               cursor-pointer

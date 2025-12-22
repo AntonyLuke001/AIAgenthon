@@ -246,7 +246,7 @@ export default function AboutSection3() {
                 timelineRef={heroRef}
                 customVariants={revealVariants}
                 className="bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 hover:from-cyan-600 hover:via-purple-600 hover:to-blue-600 shadow-lg shadow-cyan-500/20 flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-white px-5 py-3 rounded-lg cursor-pointer font-semibold"
-                onClick={() => window.location.href = 'https://thiran.sece.ac.in/'}
+                onClick={() => window.location.href = 'https://unstop.com/p/round-1-ai-agentathon-sri-eshwar-college-of-engineering-sece-tamil-nadu-1608466'}
               >
                 REGISTER NOW <ArrowRight className="" />
               </TimelineContent>

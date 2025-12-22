@@ -17,7 +17,7 @@ const handleAnimationComplete = () => {
 };
 
 const handleRegister = () => {
-  window.location.href = 'https://thiran.sece.ac.in/';
+  window.location.href = 'https://unstop.com/p/round-1-ai-agentathon-sri-eshwar-college-of-engineering-sece-tamil-nadu-1608466';
 };
 
 interface SplineSceneBasicProps {
