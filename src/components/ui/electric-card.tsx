@@ -192,7 +192,7 @@ const ElectricCard = ({
 
         .main-card {
           width: ${width};
-          aspect-ratio: ${aspectRatio};
+          aspect-ratio: 16 / 9;
           border-radius: 1.5em;
           border: 2px solid var(--electric-border-color);
           margin-top: -4px;
@@ -201,6 +201,12 @@ const ElectricCard = ({
           /* gives subtle dark base so displacement reads nicely */
           background: oklch(0.145 0 0);
           transition: background 0.5s ease, border 0.3s ease;
+        }
+
+        @media (min-width: 720px) {
+          .main-card {
+            aspect-ratio: ${aspectRatio};
+          }
         }
 
         .ec-wrap:hover .main-card {

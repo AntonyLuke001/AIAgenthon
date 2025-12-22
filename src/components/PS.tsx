@@ -49,12 +49,12 @@ const PS = () => {
         duration: 0.8,
         ease: "easeInOut",
       }}
-      className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-7xl mx-auto"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
     >
       <ElectricCard
         variant="hue"
         color="#3b82f6"
-        badge={<Container className="w-5 h-5 md:w-6 md:h-6" />}
+        badge={<Container className="w-6 h-6" />}
         title="SupplyChain"
         description="Connect devices and data to build intelligent infrastructure."
         width="100%"
@@ -64,7 +64,7 @@ const PS = () => {
       <ElectricCard
         variant="swirl"
         color="#a855f7"
-        badge={<UsersRound className="w-5 h-5 md:w-6 md:h-6" />}
+        badge={<UsersRound className="w-6 h-6" />}
         title="CivicTech"
         description="Create decentralized solutions for the future of digital trust."
         width="100%"
@@ -74,7 +74,7 @@ const PS = () => {
       <ElectricCard
         variant="hue"
         color="#06b6d4"
-        badge={<BadgeIndianRupee className="w-5 h-5 md:w-6 md:h-6" />}
+        badge={<BadgeIndianRupee className="w-6 h-6" />}
         title="FinTech"
         description="Build intelligent systems that learn and adapt to solve complex problems."
         width="100%"
@@ -84,7 +84,7 @@ const PS = () => {
       <ElectricCard
         variant="swirl"
         color="#ec4899"
-        badge={<TriangleAlert className="w-5 h-5 md:w-6 md:h-6" />}
+        badge={<TriangleAlert className="w-6 h-6" />}
         title="DisasterTech"
         description="Transform raw data into actionable insights that drive innovation."
         width="100%"
