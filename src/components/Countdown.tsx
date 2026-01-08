@@ -41,7 +41,7 @@ const Countdown = () => {
   }, [timeLeft]);
 
   const AnimatedDigit = ({ digit, prevDigit }: { digit: string; prevDigit?: string }) => {
-    // Map digit to grid pattern (which cells are active for each number)
+
     const digitPatterns: { [key: string]: number[] } = {
       '0': [1, 2, 3, 4, 6, 7, 9, 10, 12, 13, 14, 15],
       '1': [3, 6, 9, 12, 15],
