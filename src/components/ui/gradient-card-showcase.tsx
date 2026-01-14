@@ -16,7 +16,7 @@ interface SkewCardsProps {
 export default function SkewCards({ cards }: SkewCardsProps) {
   return (
     <>
-      <div className="flex justify-center items-center flex-wrap py-10 min-h-screen">
+      <div className="flex justify-center items-center flex-wrap  min-h-screen">
         {cards.map(({ title, desc, gradientFrom, gradientTo, emoji, amount }, idx) => (
           <div
             key={idx}

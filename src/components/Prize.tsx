@@ -59,7 +59,7 @@ const Prize = () => {
         <SkewCards cards={mainPrizes} />
 
         {/* Register CTA */}
-        <div className="text-center mt-16 md:mt-20">
+        <div className="text-center ">
           <p className="text-xl md:text-2xl text-neutral-300 mb-6 max-w-3xl mx-auto">
             Ready to showcase your AI innovation and compete for these amazing prizes?
           </p>

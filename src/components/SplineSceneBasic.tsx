@@ -39,16 +39,27 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
   }, []);
 
   return (
+    <>
+    <div className="w-full py-3 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
+      <BlurText
+        text="⚠️ Registration ends today. Register soon! ⚠️"
+        delay={150}
+        animateBy="words"
+        direction="top"
+        className="text-base sm:text-lg md:text-xl font-bold text-white"
+      />
+    </div>
+    <Navbar />
     <Card className="w-full h-screen border-none bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden px-4 md:px-8 lg:px-12">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
       <MouseSpotlight size={300} className="blur-xl bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0.9)_15%,rgba(255,255,255,0.6)_35%,rgba(255,255,255,0.2)_55%,transparent_75%)]" />
-      <Navbar />
+      
       <div className="flex h-full flex-col md:flex-row ">
         {/* Left content */}
-        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-20 sm:mt-32 md:mt-48">
+        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-20 sm:mt-32 md:mb-48">
           
           <BlurText
             text="AI Agentathon"
@@ -91,7 +102,6 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
           >
             Register Now
           </button>
-
         </div>
 
         {/* Right content - Hidden on mobile */}
@@ -119,5 +129,6 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
         </div>
       </div>
     </Card>
+    </>
   )
 }

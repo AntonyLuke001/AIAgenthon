@@ -48,9 +48,6 @@ const Index = () => {
       {/* Vanta.js animated network background */}
       {/* <VantaBackground /> */}
       
-      {/* Fixed Navbar */}
-      <Navbar />
-      
       {/* Cursor animation */}
       <CursorGlow />
       <Suspense fallback={null}>
