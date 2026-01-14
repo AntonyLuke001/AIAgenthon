@@ -42,7 +42,7 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Jan 23, 2025",
+      title: "Jan 20, 2025",
       content: (
         <div className="w-full h-full">
           <GradientCard

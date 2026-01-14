@@ -10,7 +10,7 @@ interface TimeLeft {
 }
 
 const Countdown = () => {
-  const targetDate = new Date('2026-01-14T00:00:00').getTime();
+  const targetDate = new Date('2026-02-04T00:00:00').getTime();
 
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date().getTime();
@@ -111,7 +111,14 @@ const Countdown = () => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 mt-8 w-full">
+    <div className="flex flex-col justify-center w-full mt-8">
+      {/* Title Text */}
+      <h2 className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-sky-500 mb-6 sm:mb-8 tracking-tighter animate-in">
+        Final round begins in:
+      </h2>
+      
+      {/* Countdown Timer */}
+      <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 w-full">
       <style>{`
         @keyframes pulse-glow {
           0%, 100% {
@@ -152,6 +159,7 @@ const Countdown = () => {
       <TimeUnit value={timeLeft.minutes} label="Mins" prevValue={prevTimeRef.current.minutes} />
       <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-sky-400/60 mb-8 flex-shrink-0">:</span>
       <TimeUnit value={timeLeft.seconds} label="Secs" prevValue={prevTimeRef.current.seconds} />
+      </div>
     </div>
   );
 };

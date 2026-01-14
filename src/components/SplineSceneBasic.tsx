@@ -59,7 +59,7 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
       
       <div className="flex h-full flex-col md:flex-row ">
         {/* Left content */}
-        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-20 sm:mt-32 md:mb-48">
+        <div className="flex-1 px-4 md:px-8 lg:px-12 relative z-10 flex flex-col justify-center mt-20 sm:mt-32 md:mb-80">
           
           <BlurText
             text="AI Agentathon"
