@@ -42,7 +42,7 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
     <>
     <div className="w-full py-3 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
       <BlurText
-        text="⚠️ Registration ends today. Register soon! ⚠️"
+        text="⚠️ Registration closed ⚠️"
         delay={150}
         animateBy="words"
         direction="top"
