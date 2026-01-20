@@ -18,7 +18,7 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Jan 2, 2025",
+      title: "Jan 2, 2026",
       content: (
         <div className="w-full h-full">
           <GradientCard
@@ -30,7 +30,7 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Jan 11, 2025",
+      title: "Jan 11, 2026",
       content: (
         <div className="w-full h-full">
           <GradientCard
@@ -42,12 +42,12 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Jan 21, 2025",
+      title: "Jan 21, 2026",
       content: (
         <div className="w-full h-full">
           <GradientCard
             title="Shortlist Announcement"
-            description="Shortlisted teams will be notified via the Team Lead's registered email . Selected teams must purchase the event pass to participate in the Final Round at Thiran. Prepare for live demonstrations, detailed explanations, and Q&A sessions with industry expert judges."
+            description="Shortlisted teams will be notified via the Team Lead's registered email on Jan 21, 2026 at 10:00am. Selected teams must purchase the event pass to participate in the Final Round at Thiran. Prepare for live demonstrations, detailed explanations, and Q&A sessions with industry expert judges."
             icon={<Calendar className="w-5 h-5" />}
           />
         </div>
