@@ -75,9 +75,9 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
             <Countdown />
           </div>
           <button className="
-            donate-btn
+            
             relative
-            cursor-pointer
+            cursor-not-allowed
             px-4 py-2 sm:px-6 sm:py-3
             mt-6 sm:mt-10
             w-full sm:w-[220px]
@@ -97,7 +97,9 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
             focus:ring-white
             focus:ring-offset-2
             focus:ring-offset-[#3A7DE9]
+            
           "
+          disabled
           onClick={handleRegister}
           >
             Register Now
