@@ -54,6 +54,9 @@ const Index = () => {
         <div className="w-full h-[80%] relative z-10">
           <SplineSceneBasic onLoad={() => setIs3DLoaded(true)} />
         </div>
+        <div id="guidelines">
+          <Guidlines/>
+        </div>
         <div id="about" className="relative z-10">
           <About />
         </div>
@@ -65,9 +68,6 @@ const Index = () => {
         </div>
         <div id="timeline">
           <Timeline/>
-        </div>
-        <div id="guidelines">
-          <Guidlines/>
         </div>
         <div id="prizes">
           <Prize/>
