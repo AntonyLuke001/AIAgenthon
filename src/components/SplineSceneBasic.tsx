@@ -40,9 +40,9 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
 
   return (
     <>
-    <div className="w-full py-3 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
+    <div className="w-full py-3 bg-gradient-to-r from-lime-400 via-green-400 to-emerald-500 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
       <BlurText
-        text="⚠️ Registration closed ⚠️"
+        text="🏆 RESULTS ARE OUT NOW! SCROLL DOWN!!! 🏆"
         delay={150}
         animateBy="words"
         direction="top"
