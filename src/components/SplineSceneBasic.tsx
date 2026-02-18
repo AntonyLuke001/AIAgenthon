@@ -40,7 +40,7 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
 
   return (
     <>
-    <div className="w-full py-3 bg-gradient-to-r from-lime-400 via-green-400 to-emerald-500 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
+    {/* <div className="w-full py-3 bg-gradient-to-r from-lime-400 via-green-400 to-emerald-500 flex items-center justify-center shadow-lg relative z-50 animate-pulse">
       <BlurText
         text="🏆 RESULTS ARE OUT NOW! SCROLL DOWN!!! 🏆"
         delay={150}
@@ -48,7 +48,7 @@ export function SplineSceneBasic({ onLoad }: SplineSceneBasicProps) {
         direction="top"
         className="text-base sm:text-lg md:text-xl font-bold text-white"
       />
-    </div>
+    </div> */}
     <Navbar />
     <Card className="w-full h-screen border-none bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden px-4 md:px-8 lg:px-12">
       <Spotlight

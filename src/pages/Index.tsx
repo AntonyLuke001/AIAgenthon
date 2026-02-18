@@ -55,7 +55,7 @@ const Index = () => {
           <SplineSceneBasic onLoad={() => setIs3DLoaded(true)} />
         </div>
         <div id="guidelines">
-          <Guidlines/>
+          {/* <Guidlines/> */}
         </div>
         <div id="about" className="relative z-10">
           <About />
@@ -67,13 +67,13 @@ const Index = () => {
           <PS/>
         </div>
         <div id="timeline">
-          <Timeline/>
+          {/* <Timeline/> */}
         </div>
         <div id="prizes">
-          <Prize/>
+          {/* <Prize/> */}
         </div>
         <div id="faqs">
-          <FAQ/>
+          {/* <FAQ/> */}
         </div>
         <div>
           <Footer/>

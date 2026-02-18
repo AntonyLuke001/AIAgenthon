@@ -45,12 +45,12 @@ const Navbar = () => {
   }
 
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Theme', href: '#theme' },
-    { name: 'PS', href: '#ps' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'Prizes', href: '#prizes' },
-    { name: 'FAQs', href: '#faqs' }
+    // { name: 'About', href: '#about' },
+    // { name: 'Theme', href: '#theme' },
+    // { name: 'PS', href: '#ps' },
+    // { name: 'Timeline', href: '#timeline' },
+    // { name: 'Prizes', href: '#prizes' },
+    // { name: 'FAQs', href: '#faqs' }
   ]
 
   return (
